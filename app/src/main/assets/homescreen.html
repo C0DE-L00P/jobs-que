@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Swiper JS -->
+    <link rel="stylesheet" href="./assets/css/swiper.css" />
+    <script src="./assets/js/swiper.js"></script>
+
+    <link rel="stylesheet" href="./assets/css/homescreen.css">
+
+    <script src="./assets/js/handling-favorites.js"></script>
+    <script src="./assets/js/homescreen.js" defer></script>
+</head>
+
+<body>
+    <main>
+
+        <br>
+        <header class="container d-flex justify-content-between">
+            <div>
+                <h2 id="salute_h2">Hi 👋</h2>
+                <p>Create a better future for yourself here</p>
+            </div>
+            <a target="_parent" class="btn btn-outline-light border-0 rounded-circle align-self-baseline d-grid"
+                href="./notifications.html" style="width: 44; aspect-ratio: 1/1; place-content: center;">
+                <bill-icon>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12.0201 2.90997C8.71009 2.90997 6.02009 5.59997 6.02009 8.90997V11.8C6.02009 12.41 5.76009 13.34 5.45009 13.86L4.30009 15.77C3.59009 16.95 4.08009 18.26 5.38009 18.7C9.69009 20.14 14.3401 20.14 18.6501 18.7C19.8601 18.3 20.3901 16.87 19.7301 15.77L18.5801 13.86C18.2801 13.34 18.0201 12.41 18.0201 11.8V8.90997C18.0201 5.60997 15.3201 2.90997 12.0201 2.90997Z"
+                            stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" />
+                        <path
+                            d="M13.8699 3.2C13.5599 3.11 13.2399 3.04 12.9099 3C11.9499 2.88 11.0299 2.95 10.1699 3.2C10.4599 2.46 11.1799 1.94 12.0199 1.94C12.8599 1.94 13.5799 2.46 13.8699 3.2Z"
+                            stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path
+                            d="M15.02 19.06C15.02 20.71 13.67 22.06 12.02 22.06C11.2 22.06 10.44 21.72 9.90002 21.18C9.36002 20.64 9.02002 19.88 9.02002 19.06"
+                            stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" />
+                    </svg>
+
+                </bill-icon>
+            </a>
+        </header>
+        <br>
+
+        <search-bar class="d-block container">
+            <a target="_parent" href="./search.html" class="d-block text-decoration-none position-relative rounded-pill pe-3"
+                style="padding-inline-start: 12px;border: 1px solid #d1d5db">
+                <label for="inp_search" class="rounded-pill d-flex align-items-center pe-1">
+                    <search-icon class="mb-1">
+                        <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M9.58342 18.1248C4.87508 18.1248 1.04175 14.2915 1.04175 9.58317C1.04175 4.87484 4.87508 1.0415 9.58342 1.0415C14.2917 1.0415 18.1251 4.87484 18.1251 9.58317C18.1251 14.2915 14.2917 18.1248 9.58342 18.1248ZM9.58342 2.2915C5.55841 2.2915 2.29175 5.5665 2.29175 9.58317C2.29175 13.5998 5.55841 16.8748 9.58342 16.8748C13.6084 16.8748 16.8751 13.5998 16.8751 9.58317C16.8751 5.5665 13.6084 2.2915 9.58342 2.2915Z"
+                                fill="#292D32" />
+                            <path
+                                d="M18.3333 18.9585C18.175 18.9585 18.0166 18.9002 17.8916 18.7752L16.225 17.1085C15.9833 16.8669 15.9833 16.4669 16.225 16.2252C16.4666 15.9835 16.8666 15.9835 17.1083 16.2252L18.775 17.8919C19.0166 18.1335 19.0166 18.5335 18.775 18.7752C18.65 18.9002 18.4916 18.9585 18.3333 18.9585Z"
+                                fill="#292D32" />
+                        </svg>
+                    </search-icon>
+
+                    <input type="text" name="search" id="inp_search" class="form-control rounded-pill border-0" value=""
+                        placeholder="Search...">
+                </label>
+
+
+                <button
+                    class="bg-white border-0 hide-when-empty position-absolute end-0 top-0 bottom-0 align-items-center p-0 my-auto rounded-2 me-2"
+                    onclick="document.getElementById('inp_search').value = ''">
+                    <close-icon class="d-inline-block pb-1 bg-white">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M9.99984 18.9584C5.05817 18.9584 1.0415 14.9417 1.0415 10C1.0415 5.05835 5.05817 1.04169 9.99984 1.04169C14.9415 1.04169 18.9582 5.05835 18.9582 10C18.9582 14.9417 14.9415 18.9584 9.99984 18.9584ZM9.99984 2.29169C5.74984 2.29169 2.2915 5.75002 2.2915 10C2.2915 14.25 5.74984 17.7084 9.99984 17.7084C14.2498 17.7084 17.7082 14.25 17.7082 10C17.7082 5.75002 14.2498 2.29169 9.99984 2.29169Z"
+                                fill="#111827" />
+                            <path
+                                d="M7.64147 12.9833C7.48314 12.9833 7.3248 12.925 7.1998 12.8C6.95814 12.5583 6.95814 12.1583 7.1998 11.9167L11.9165 7.19999C12.1581 6.95832 12.5581 6.95832 12.7998 7.19999C13.0415 7.44165 13.0415 7.84165 12.7998 8.08332L8.08314 12.8C7.96647 12.925 7.7998 12.9833 7.64147 12.9833Z"
+                                fill="#111827" />
+                            <path
+                                d="M12.3581 12.9833C12.1998 12.9833 12.0415 12.925 11.9165 12.8L7.1998 8.08332C6.95814 7.84165 6.95814 7.44165 7.1998 7.19999C7.44147 6.95832 7.84147 6.95832 8.08314 7.19999L12.7998 11.9167C13.0415 12.1583 13.0415 12.5583 12.7998 12.8C12.6748 12.925 12.5165 12.9833 12.3581 12.9833Z"
+                                fill="#111827" />
+                        </svg>
+
+                    </close-icon>
+                </button>
+            </a>
+        </search-bar>
+        <br>
+
+        <applications-section class="container" style="display: block;">
+            <template>
+                <application-card class="rounded-4 bg-primary bg-opacity-10 d-block p-3">
+
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="d-flex align-items-start">
+                            <img src="..." alt="" onerror="if (this.src != './assets/images/fallback_job_img.webp') this.src = './assets/images/fallback_job_img.webp';"  class="align-self-start mb-2" style="aspect-ratio: 1/1; width: 40px;"/>
+    
+                            <span class="vstack d-inline-block mb-2 mx-2">
+                                <h5 class="mb-0">Twitter</h5>
+                                <small class="d-block">Waiting to be selected by the twitter team</small>
+                            </span>
+                        </div>
+    
+                        <span id="application_state_submited" class="py-2 bg-primary rounded-pill px-4 bg-opacity-10 text-primary user-select-none">Submited</span>
+                        <a id="application_state_accepted" class="d-none text-decoration-none py-2 rounded-pill px-4 text-success user-select-none" style="background-color: #b2ed82;" href="./chat.html?comp_id=6">Accepted</a>
+                    </div>
+                </application-card>
+            </template>
+            
+            <br>
+        </applications-section>
+
+        <suggested-jobs-section>
+            <div class="container d-flex justify-content-between">
+                <h3>Suggested Jobs</h3>
+                <a target="_parent" href="./suggested-jobs.html"
+                    class="text-primary text-decoration-none btn btn-outline-light border-0 ">View all</a>
+            </div>
+            <br>
+
+            <!-- Swiper -->
+
+            <swiper class="swiper suggestSwiper position-relative d-block pe-3">
+                <div class="swiper-wrapper">
+                    <template>
+                        <suggested-job-card class="swiper-slide d-block rounded-4 text-white bg-opacity-75 p-3">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <basic-job-info class="d-flex align-items-center">
+                                    <zoom-icon class="me-4 d-inline-block">
+                                        <svg width="40" height="41" viewBox="0 0 40 41" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <rect y="0.5" width="40" height="40" rx="8" fill="white" />
+                                            <path
+                                                d="M6 16.1C6 12.7397 6 11.0595 6.65396 9.77606C7.2292 8.64708 8.14708 7.7292 9.27606 7.15396C10.5595 6.5 12.2397 6.5 15.6 6.5H24.4C27.7603 6.5 29.4405 6.5 30.7239 7.15396C31.8529 7.7292 32.7708 8.64708 33.346 9.77606C34 11.0595 34 12.7397 34 16.1V24.9C34 28.2603 34 29.9405 33.346 31.2239C32.7708 32.3529 31.8529 33.2708 30.7239 33.846C29.4405 34.5 27.7603 34.5 24.4 34.5H15.6C12.2397 34.5 10.5595 34.5 9.27606 33.846C8.14708 33.2708 7.2292 32.3529 6.65396 31.2239C6 29.9405 6 28.2603 6 24.9V16.1Z"
+                                                fill="#4087FC" />
+                                            <path
+                                                d="M12.2667 14.5C11.5671 14.5 11 15.1396 11 15.9286V22.8571C11 24.869 12.4461 26.5 14.23 26.5L21.7333 26.4286C22.4329 26.4286 23 25.789 23 25V18C23 15.9881 21.2839 14.5 19.5 14.5L12.2667 14.5Z"
+                                                fill="white" />
+                                            <path
+                                                d="M24.7122 17.2276C24.2596 17.6752 24 18.3211 24 19V21.8993C24 22.5782 24.2596 23.2242 24.7122 23.6717L27.5288 26.1525C28.1019 26.7191 29 26.2601 29 25.4005V15.6352C29 14.7755 28.1019 14.3165 27.5288 14.8832L24.7122 17.2276Z"
+                                                fill="white" />
+                                        </svg>
+
+                                    </zoom-icon>
+
+                                    <span class="vstack d-inline-block mb-2">
+                                        <h4 class="mb-1">Product Designer</h4>
+                                        <small class="text-light text-opacity-50">Zoom • United States</small>
+                                    </span>
+                                </basic-job-info>
+
+                                <input type="checkbox" name="saved" id="saved_btn_id" class="d-none save-suggested"
+                                    value="job_id">
+                                <label for="saved_btn_id" class="btn btn-outline-light border-0 bg-transparent"
+                                    role="button">
+                                    <save-unclicked-icon>
+                                        <svg width="24" height="25" viewBox="0 0 24 25" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M14.5 11.9H9.5C9.09 11.9 8.75 11.56 8.75 11.15C8.75 10.74 9.09 10.4 9.5 10.4H14.5C14.91 10.4 15.25 10.74 15.25 11.15C15.25 11.56 14.91 11.9 14.5 11.9Z"
+                                                fill="white" />
+                                            <path
+                                                d="M4.93006 23.25C4.51006 23.25 4.12006 23.15 3.77006 22.95C3.00006 22.5 2.56006 21.59 2.56006 20.46V6.36C2.56006 3.82 4.63006 1.75 7.17006 1.75H16.8201C19.3601 1.75 21.4301 3.82 21.4301 6.36V20.45C21.4301 21.58 20.9901 22.49 20.2201 22.94C19.4501 23.39 18.4401 23.34 17.4501 22.79L12.5701 20.08C12.2801 19.92 11.7101 19.92 11.4201 20.08L6.54006 22.79C6.00006 23.09 5.45006 23.25 4.93006 23.25ZM7.18006 3.25C5.47006 3.25 4.07006 4.65 4.07006 6.36V20.45C4.07006 21.04 4.24006 21.48 4.54006 21.65C4.84006 21.83 5.31006 21.77 5.82006 21.48L10.7001 18.77C11.4401 18.36 12.5601 18.36 13.3001 18.77L18.1801 21.48C18.6901 21.77 19.1601 21.83 19.4601 21.65C19.7601 21.47 19.9301 21.03 19.9301 20.45V6.36C19.9301 4.65 18.5301 3.25 16.8201 3.25H7.18006Z"
+                                                fill="white" />
+                                        </svg>
+                                    </save-unclicked-icon>
+
+                                    <save-clicked-icon>
+                                        <svg width="24" height="25" viewBox="0 0 24 25" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M16.8201 2.5H7.18007C5.05007 2.5 3.32007 4.24 3.32007 6.36V20.45C3.32007 22.25 4.61007 23.01 6.19007 22.14L11.0701 19.43C11.5901 19.14 12.4301 19.14 12.9401 19.43L17.8201 22.14C19.4001 23.02 20.6901 22.26 20.6901 20.45V6.36C20.6801 4.24 18.9501 2.5 16.8201 2.5ZM14.5001 11.9H9.50007C9.09007 11.9 8.75007 11.56 8.75007 11.15C8.75007 10.74 9.09007 10.4 9.50007 10.4H14.5001C14.9101 10.4 15.2501 10.74 15.2501 11.15C15.2501 11.56 14.9101 11.9 14.5001 11.9Z"
+                                                fill="#fff" />
+                                        </svg>
+                                    </save-clicked-icon>
+                                </label>
+                            </div>
+
+
+                            <tags class="mt-1 d-flex flex-wrap gap-2">
+                                <button
+                                    class="text-light btn rounded-pill btn-outline-primary border-0 bg-primary bg-opacity-25 flex-grow-1">Fulltime</button>
+                                <button
+                                    class="text-light btn rounded-pill btn-outline-primary border-0 bg-primary bg-opacity-25 flex-grow-1">Remote</button>
+                                <button
+                                    class="text-light btn rounded-pill btn-outline-primary border-0 bg-primary bg-opacity-25 flex-grow-1">Senior</button>
+                            </tags>
+
+                            <br>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fw-semibold h3">$12K-15K<small class="text-light text-opacity-50 fw-normal"
+                                        style="font-size: 14px">/Month</small></span>
+                                <button class="rounded-pill btn btn-primary fs-6">Apply now</button>
+                            </div>
+
+                        </suggested-job-card>
+                    </template>
+                </div>
+            </swiper>
+            <br>
+
+        </suggested-jobs-section>
+
+
+        <br>
+        <recent-jobs-section class="container d-block">
+            <div class="d-flex justify-content-between">
+                <h3>Recent Jobs</h3>
+                <a target="_parent" href="./all-jobs.html"
+                    class="text-primary text-decoration-none btn btn-outline-light border-0 ">View all</a>
+            </div>
+            <br>
+
+
+            <recent-jobs-list>
+                <template>
+                    <job-item>
+                        <div class="d-flex justify-content-between align-items-start">
+                            <basic-job-info class="d-flex ">
+                                <twitter-icon class="me-4 d-inline-block">
+                                    <svg width="40" height="41" viewBox="0 0 40 41" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <rect y="0.5" width="40" height="40" rx="8" fill="#6690FF" />
+                                        <path
+                                            d="M15.7887 33C12.5537 33 9.53817 32.0591 7 30.4356C9.15499 30.5751 12.9581 30.2411 15.3236 27.9848C11.7651 27.8215 10.1603 25.0923 9.95094 23.926C10.2533 24.0426 11.6953 24.1826 12.5093 23.856C8.4159 22.8296 7.78793 19.2373 7.92748 18.141C8.695 18.6775 9.99745 18.8641 10.5091 18.8174C6.69479 16.0882 8.06703 11.9828 8.74151 11.0963C11.4788 14.8887 15.5812 17.0186 20.6564 17.137C20.5607 16.7174 20.5102 16.2804 20.5102 15.8316C20.5102 12.6109 23.1134 10 26.3247 10C28.0025 10 29.5144 10.7128 30.5757 11.8528C31.6969 11.5901 33.3843 10.9751 34.2092 10.4432C33.7934 11.9361 32.4989 13.1815 31.7159 13.6431C31.7224 13.6588 31.7095 13.6273 31.7159 13.6431C32.4037 13.539 34.2648 13.1814 35 12.6826C34.6364 13.5213 33.264 14.9157 32.1377 15.6964C32.3473 24.9381 25.2765 33 15.7887 33Z"
+                                            fill="white" />
+                                    </svg>
+
+                                </twitter-icon>
+
+                                <a target="_parent" class="vstack d-inline-block mb-2 text-decoration-none text-dark"
+                                    href="./apply-job.html" onclick="sessionStorage.setItem('navigate_job','JOB_ID')">
+                                    <h4 class="mb-1">Senior UI Designer</h4>
+                                    <small>Twitter • Jakarta, Indonesia </small>
+                                </a>
+                            </basic-job-info>
+
+                            <input type="checkbox" name="saved" id="recent_job_id" class="d-none save-recent"
+                                value="job_id">
+                            <label for="recent_job_id" class="btn btn-outline-light border-0 bg-transparent"
+                                role="button">
+                                <save-unclicked-icon>
+                                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M14.5 11.9H9.5C9.09 11.9 8.75 11.56 8.75 11.15C8.75 10.74 9.09 10.4 9.5 10.4H14.5C14.91 10.4 15.25 10.74 15.25 11.15C15.25 11.56 14.91 11.9 14.5 11.9Z"
+                                            fill="grey" />
+                                        <path
+                                            d="M4.93006 23.25C4.51006 23.25 4.12006 23.15 3.77006 22.95C3.00006 22.5 2.56006 21.59 2.56006 20.46V6.36C2.56006 3.82 4.63006 1.75 7.17006 1.75H16.8201C19.3601 1.75 21.4301 3.82 21.4301 6.36V20.45C21.4301 21.58 20.9901 22.49 20.2201 22.94C19.4501 23.39 18.4401 23.34 17.4501 22.79L12.5701 20.08C12.2801 19.92 11.7101 19.92 11.4201 20.08L6.54006 22.79C6.00006 23.09 5.45006 23.25 4.93006 23.25ZM7.18006 3.25C5.47006 3.25 4.07006 4.65 4.07006 6.36V20.45C4.07006 21.04 4.24006 21.48 4.54006 21.65C4.84006 21.83 5.31006 21.77 5.82006 21.48L10.7001 18.77C11.4401 18.36 12.5601 18.36 13.3001 18.77L18.1801 21.48C18.6901 21.77 19.1601 21.83 19.4601 21.65C19.7601 21.47 19.9301 21.03 19.9301 20.45V6.36C19.9301 4.65 18.5301 3.25 16.8201 3.25H7.18006Z"
+                                            fill="grey" />
+                                    </svg>
+                                </save-unclicked-icon>
+
+                                <save-clicked-icon>
+                                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M16.8201 2.5H7.18007C5.05007 2.5 3.32007 4.24 3.32007 6.36V20.45C3.32007 22.25 4.61007 23.01 6.19007 22.14L11.0701 19.43C11.5901 19.14 12.4301 19.14 12.9401 19.43L17.8201 22.14C19.4001 23.02 20.6901 22.26 20.6901 20.45V6.36C20.6801 4.24 18.9501 2.5 16.8201 2.5ZM14.5001 11.9H9.50007C9.09007 11.9 8.75007 11.56 8.75007 11.15C8.75007 10.74 9.09007 10.4 9.50007 10.4H14.5001C14.9101 10.4 15.2501 10.74 15.2501 11.15C15.2501 11.56 14.9101 11.9 14.5001 11.9Z"
+                                            fill="#3366FF" />
+                                    </svg>
+                                </save-clicked-icon>
+                            </label>
+                        </div>
+
+
+                        <div class="d-flex justify-content-between align-items-end">
+                            <tags class="d-flex flex-wrap gap-2">
+                                <button
+                                    class="btn rounded-pill btn-outline-primary border-0 bg-primary bg-opacity-25">Fulltime</button>
+                                <button
+                                    class="btn rounded-pill btn-outline-primary border-0 bg-primary bg-opacity-25">Remote</button>
+                                <button
+                                    class="btn rounded-pill btn-outline-primary border-0 bg-primary bg-opacity-25">Senior</button>
+                            </tags>
+
+                            <span class="text-success fw-semibold">$15K<small
+                                    class="text-secondary fw-normal">/Month</small></span>
+                        </div>
+                        <hr class="border-dark border-opacity-25 mx-2">
+                    </job-item>
+                </template>
+            </recent-jobs-list>
+        </recent-jobs-section>
+
+    </main>
+</body>
+
+</html>

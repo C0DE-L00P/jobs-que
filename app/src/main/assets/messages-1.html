@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/messages.js" defer></script>
+</head>
+
+<body style="height: 100vh">
+    <div class="d-flex justify-content-between align-items-center pt-3 pb-3 position-fixed top-0 w-100 bg-white">
+        <a href="javascript:parent.window.document.getElementById('homescreen_a').click()"
+            class="btn bg-transparent rounded-pill">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M9.56994 18.82C9.37994 18.82 9.18994 18.75 9.03994 18.6L2.96994 12.53C2.67994 12.24 2.67994 11.76 2.96994 11.47L9.03994 5.4C9.32994 5.11 9.80994 5.11 10.0999 5.4C10.3899 5.69 10.3899 6.17 10.0999 6.46L4.55994 12L10.0999 17.54C10.3899 17.83 10.3899 18.31 10.0999 18.6C9.95994 18.75 9.75994 18.82 9.56994 18.82Z"
+                    fill="#292D32" />
+                <path
+                    d="M20.4999 12.75H3.66992C3.25992 12.75 2.91992 12.41 2.91992 12C2.91992 11.59 3.25992 11.25 3.66992 11.25H20.4999C20.9099 11.25 21.2499 11.59 21.2499 12C21.2499 12.41 20.9099 12.75 20.4999 12.75Z"
+                    fill="#292D32" />
+            </svg>
+        </a>
+        <h5 class="fw-semibold me-4">Messages</h5>
+        <i class="opacity-0">---</i>
+    </div>
+
+    <empty-placeholder
+        class="d-inline-flex flex-column align-items-center text-center h-100 w-100 justify-content-center">
+        <svg width="173" height="142" viewBox="0 0 173 142" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="89" cy="76" r="66" fill="#F0F5FF" />
+            <circle cx="89" cy="76" r="50" fill="#E0EBFF" />
+            <path
+                d="M98.9994 101.8C98.1494 101.8 97.3244 101.55 96.5994 101.075L85.9494 93.9746H81.2244C80.6494 93.9746 80.0994 93.6997 79.7494 93.2497C79.3994 92.7747 79.2744 92.1746 79.4244 91.6246C79.5744 91.0246 79.6494 90.4246 79.6494 89.7746C79.6494 87.7746 78.8994 85.8497 77.5494 84.3497C76.0244 82.6247 73.8494 81.6496 71.5244 81.6496C69.2994 81.6496 67.2244 82.5246 65.6994 84.0996C65.2244 84.5996 64.4994 84.7996 63.8494 84.5996C63.1994 84.3996 62.6744 83.8746 62.5244 83.1996C62.2744 82.0996 62.1494 80.8996 62.1494 79.5996V64.5996C62.1494 55.9996 67.9244 50.2246 76.5244 50.2246H101.524C110.124 50.2246 115.899 55.9996 115.899 64.5996V79.5996C115.899 83.7746 114.524 87.3745 111.899 89.9995C109.699 92.1995 106.774 93.5247 103.399 93.8747V97.4246C103.399 99.0496 102.499 100.525 101.074 101.3C100.399 101.625 99.6994 101.8 98.9994 101.8ZM83.3744 90.1996H86.4994C86.8744 90.1996 87.2244 90.2996 87.5494 90.5246L98.6744 97.9497C98.9244 98.1247 99.1744 98.0495 99.2994 97.9745C99.4244 97.8995 99.6494 97.7496 99.6494 97.3996V92.0746C99.6494 91.0496 100.499 90.1996 101.524 90.1996C104.699 90.1996 107.374 89.1997 109.249 87.3247C111.149 85.4247 112.149 82.7496 112.149 79.5746V64.5746C112.149 58.1246 107.974 53.9496 101.524 53.9496H76.5244C70.0744 53.9496 65.8994 58.1246 65.8994 64.5746V79.2746C67.5994 78.3496 69.5244 77.8746 71.5244 77.8746C74.9244 77.8746 78.1494 79.3246 80.3494 81.8246C82.2994 83.9996 83.3994 86.8246 83.3994 89.7496C83.3744 89.8996 83.3744 90.0496 83.3744 90.1996Z"
+                fill="#3366FF" />
+            <path
+                d="M71.5 101.625C68.55 101.625 65.75 100.525 63.575 98.55C62.7 97.8 61.925 96.875 61.325 95.85C60.225 94.05 59.625 91.925 59.625 89.75C59.625 86.625 60.825 83.7 62.975 81.475C65.225 79.15 68.25 77.875 71.5 77.875C74.9 77.875 78.125 79.325 80.325 81.825C82.275 84 83.375 86.825 83.375 89.75C83.375 90.7 83.25 91.65 83 92.55C82.75 93.675 82.275 94.85 81.625 95.875C79.55 99.425 75.65 101.625 71.5 101.625ZM71.5 81.625C69.275 81.625 67.2 82.5 65.675 84.075C64.2 85.6 63.375 87.6 63.375 89.75C63.375 91.225 63.775 92.675 64.55 93.925C64.95 94.625 65.475 95.2499 66.075 95.7749C67.575 97.1499 69.5 97.9 71.5 97.9C74.375 97.9 76.975 96.425 78.45 93.975C78.9 93.275 79.2 92.5001 79.375 91.7001C79.55 91.0501 79.625 90.425 79.625 89.775C79.625 87.775 78.875 85.8501 77.525 84.3501C76.025 82.6001 73.825 81.625 71.5 81.625Z"
+                fill="#091A7A" />
+            <path
+                d="M74.175 94.2247C73.7 94.2247 73.225 94.0498 72.85 93.6748L67.575 88.3998C66.85 87.6748 66.85 86.4748 67.575 85.7498C68.3 85.0248 69.5 85.0248 70.225 85.7498L75.5 91.0248C76.225 91.7498 76.225 92.9498 75.5 93.6748C75.125 94.0498 74.65 94.2247 74.175 94.2247Z"
+                fill="#3366FF" />
+            <path
+                d="M68.8253 94.3C68.3503 94.3 67.8753 94.125 67.5003 93.75C66.7753 93.025 66.7753 91.825 67.5003 91.1L72.7753 85.825C73.5003 85.1 74.7003 85.1 75.4253 85.825C76.1503 86.55 76.1503 87.75 75.4253 88.475L70.1503 93.75C69.7753 94.125 69.3003 94.3 68.8253 94.3Z"
+                fill="#292D32" />
+            <path
+                d="M97.75 74.125H80.25C79.225 74.125 78.375 73.275 78.375 72.25C78.375 71.225 79.225 70.375 80.25 70.375H97.75C98.775 70.375 99.625 71.225 99.625 72.25C99.625 73.275 98.775 74.125 97.75 74.125Z"
+                fill="#292D32" />
+            <circle cx="164" cy="114" r="9" fill="#D6E4FF" />
+            <circle cx="7" cy="70" r="7" fill="#D6E4FF" />
+            <circle cx="141" cy="5" r="5" fill="#D6E4FF" />
+        </svg>
+        <br>
+        <h3>You have not received any messages</h3>
+        <small class="text-secondary px-4">Once your application has reached the interview stage, you will get a message
+            from the recruiter.</small>
+    </empty-placeholder>
+
+    <messages-content class="d-block d-none">
+        <br><br><br>
+        <search-filter class="container d-flex gap-2">
+            <div class="position-relative rounded-pill pe-3 flex-grow-1"
+                style="padding-inline-start: 12px;border: 1px solid #d1d5db">
+                <label for="inp_search" class="rounded-pill d-flex align-items-center pe-1 h-100">
+                    <search-icon class="mb-1">
+                        <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M9.58342 18.1248C4.87508 18.1248 1.04175 14.2915 1.04175 9.58317C1.04175 4.87484 4.87508 1.0415 9.58342 1.0415C14.2917 1.0415 18.1251 4.87484 18.1251 9.58317C18.1251 14.2915 14.2917 18.1248 9.58342 18.1248ZM9.58342 2.2915C5.55841 2.2915 2.29175 5.5665 2.29175 9.58317C2.29175 13.5998 5.55841 16.8748 9.58342 16.8748C13.6084 16.8748 16.8751 13.5998 16.8751 9.58317C16.8751 5.5665 13.6084 2.2915 9.58342 2.2915Z"
+                                fill="#292D32" />
+                            <path
+                                d="M18.3333 18.9585C18.175 18.9585 18.0166 18.9002 17.8916 18.7752L16.225 17.1085C15.9833 16.8669 15.9833 16.4669 16.225 16.2252C16.4666 15.9835 16.8666 15.9835 17.1083 16.2252L18.775 17.8919C19.0166 18.1335 19.0166 18.5335 18.775 18.7752C18.65 18.9002 18.4916 18.9585 18.3333 18.9585Z"
+                                fill="#292D32" />
+                        </svg>
+                    </search-icon>
+                    <input type="text" name="search" id="inp_search" class="form-control rounded-pill border-0" value=""
+                        placeholder="Search...">
+                </label>
+
+                <button
+                    class="btn btn-outline-light hide-when-empty position-absolute end-0 top-0 px-1 bottom-0 align-items-center p-0 my-auto rounded-2 me-2 border-0"
+                    onclick="document.getElementById('inp_search').value = ''" style="height: 32px;">
+                    <close-icon class="d-inline-block pb-1 ">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M9.99984 18.9584C5.05817 18.9584 1.0415 14.9417 1.0415 10C1.0415 5.05835 5.05817 1.04169 9.99984 1.04169C14.9415 1.04169 18.9582 5.05835 18.9582 10C18.9582 14.9417 14.9415 18.9584 9.99984 18.9584ZM9.99984 2.29169C5.74984 2.29169 2.2915 5.75002 2.2915 10C2.2915 14.25 5.74984 17.7084 9.99984 17.7084C14.2498 17.7084 17.7082 14.25 17.7082 10C17.7082 5.75002 14.2498 2.29169 9.99984 2.29169Z"
+                                fill="#111827" />
+                            <path
+                                d="M7.64147 12.9833C7.48314 12.9833 7.3248 12.925 7.1998 12.8C6.95814 12.5583 6.95814 12.1583 7.1998 11.9167L11.9165 7.19999C12.1581 6.95832 12.5581 6.95832 12.7998 7.19999C13.0415 7.44165 13.0415 7.84165 12.7998 8.08332L8.08314 12.8C7.96647 12.925 7.7998 12.9833 7.64147 12.9833Z"
+                                fill="#111827" />
+                            <path
+                                d="M12.3581 12.9833C12.1998 12.9833 12.0415 12.925 11.9165 12.8L7.1998 8.08332C6.95814 7.84165 6.95814 7.44165 7.1998 7.19999C7.44147 6.95832 7.84147 6.95832 8.08314 7.19999L12.7998 11.9167C13.0415 12.1583 13.0415 12.5583 12.7998 12.8C12.6748 12.925 12.5165 12.9833 12.3581 12.9833Z"
+                                fill="#111827" />
+                        </svg>
+
+                    </close-icon>
+                </button>
+            </div>
+            <button class="btn btn-outline-light rounded-circle border-secondary border-opacity-25"
+                data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom"
+                style="aspect-ratio: 1/1;">
+                <fitler-icon class="mb-1 d-inline-block">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M22 7.25H16C15.59 7.25 15.25 6.91 15.25 6.5C15.25 6.09 15.59 5.75 16 5.75H22C22.41 5.75 22.75 6.09 22.75 6.5C22.75 6.91 22.41 7.25 22 7.25Z"
+                            fill="#292D32" />
+                        <path
+                            d="M6 7.25H2C1.59 7.25 1.25 6.91 1.25 6.5C1.25 6.09 1.59 5.75 2 5.75H6C6.41 5.75 6.75 6.09 6.75 6.5C6.75 6.91 6.41 7.25 6 7.25Z"
+                            fill="#292D32" />
+                        <path
+                            d="M10 10.75C7.66 10.75 5.75 8.84 5.75 6.5C5.75 4.16 7.66 2.25 10 2.25C12.34 2.25 14.25 4.16 14.25 6.5C14.25 8.84 12.34 10.75 10 10.75ZM10 3.75C8.48 3.75 7.25 4.98 7.25 6.5C7.25 8.02 8.48 9.25 10 9.25C11.52 9.25 12.75 8.02 12.75 6.5C12.75 4.98 11.52 3.75 10 3.75Z"
+                            fill="#292D32" />
+                        <path
+                            d="M22 18.25H18C17.59 18.25 17.25 17.91 17.25 17.5C17.25 17.09 17.59 16.75 18 16.75H22C22.41 16.75 22.75 17.09 22.75 17.5C22.75 17.91 22.41 18.25 22 18.25Z"
+                            fill="#292D32" />
+                        <path
+                            d="M8 18.25H2C1.59 18.25 1.25 17.91 1.25 17.5C1.25 17.09 1.59 16.75 2 16.75H8C8.41 16.75 8.75 17.09 8.75 17.5C8.75 17.91 8.41 18.25 8 18.25Z"
+                            fill="#292D32" />
+                        <path
+                            d="M14 21.75C11.66 21.75 9.75 19.84 9.75 17.5C9.75 15.16 11.66 13.25 14 13.25C16.34 13.25 18.25 15.16 18.25 17.5C18.25 19.84 16.34 21.75 14 21.75ZM14 14.75C12.48 14.75 11.25 15.98 11.25 17.5C11.25 19.02 12.48 20.25 14 20.25C15.52 20.25 16.75 19.02 16.75 17.5C16.75 15.98 15.52 14.75 14 14.75Z"
+                            fill="#292D32" />
+                    </svg>
+                </fitler-icon>
+            </button>
+        </search-filter>
+        <br>
+
+        <message-list class="d-block text-center">
+
+            <template id="template_chat">
+                <message-item class="notification-item pt-2 d-block px-3" role="button">
+                    <div class="d-flex mb-0 pb-0 align-items-start gap-2">
+                        <div class="position-relative">
+                            <img src="./assets/images/twitter-circle.webp" alt="" style="width: 48px">
+                            <badge
+                                class="text-white position-absolute translate-middle d-flex bg-primary border border-light rounded-circle"
+                                style="top: 10px; left: 4px; width: 20px; aspect-ratio: 1/1;  place-content: center; font-size: 12px; ">
+                                1
+                                <span class="visually-hidden">New alerts</span>
+                            </badge>
+                        </div>
+
+                        <div class="flex-grow-1 text-start">
+                            <div class="d-flex justify-content-between">
+                                <h6 class="mb-0">Twitter</h6>
+                                <small class="text-primary">12:39</small>
+                            </div>
+                            <small style="font-size: 11px;">Here is the link: http://zoom.com/abcdeefg </small>
+                            <hr class="border-secondary border-opacity-50 mt-2 mb-0" />
+                        </div>
+                    </div>
+                </message-item>
+            </template>
+        </message-list>
+    </messages-content>
+    <br><br>
+
+
+    <offcanvas class="offcanvas h-auto offcanvas-bottom rounded-top" tabindex="-1" id="offcanvasBottom"
+        aria-labelledby="offcanvasBottomLabel">
+        <div class="offcanvas-body">
+
+            <a href="javascript:location.reload()"
+                class="text-decoration-none gap-3 btn btn-outline-light rounded-pill d-flex align-items-center mb-3 w-100 text-dark py-2">
+                <span class="flex-grow-1 text-start">Unread</span>
+                <arrow-icon>
+                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M5.93998 14.28C5.81332 14.28 5.68665 14.2333 5.58665 14.1333C5.39332 13.94 5.39332 13.62 5.58665 13.4267L9.93332 9.08001C10.2533 8.76001 10.2533 8.24001 9.93332 7.92001L5.58665 3.57335C5.39332 3.38001 5.39332 3.06001 5.58665 2.86668C5.77998 2.67335 6.09998 2.67335 6.29332 2.86668L10.64 7.21335C10.98 7.55335 11.1733 8.01335 11.1733 8.50001C11.1733 8.98668 10.9866 9.44668 10.64 9.78668L6.29332 14.1333C6.19332 14.2267 6.06665 14.28 5.93998 14.28Z"
+                            fill="#111827" />
+                    </svg>
+                </arrow-icon>
+            </a>
+
+            <a href="javascript:location.reload()"
+                class="text-decoration-none gap-3 btn btn-outline-light rounded-pill d-flex align-items-center mb-3 w-100 text-dark py-2">
+
+                <span class="flex-grow-1 text-start">Spam</span>
+                <arrow-icon>
+                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M5.93998 14.28C5.81332 14.28 5.68665 14.2333 5.58665 14.1333C5.39332 13.94 5.39332 13.62 5.58665 13.4267L9.93332 9.08001C10.2533 8.76001 10.2533 8.24001 9.93332 7.92001L5.58665 3.57335C5.39332 3.38001 5.39332 3.06001 5.58665 2.86668C5.77998 2.67335 6.09998 2.67335 6.29332 2.86668L10.64 7.21335C10.98 7.55335 11.1733 8.01335 11.1733 8.50001C11.1733 8.98668 10.9866 9.44668 10.64 9.78668L6.29332 14.1333C6.19332 14.2267 6.06665 14.28 5.93998 14.28Z"
+                            fill="#111827" />
+                    </svg>
+                </arrow-icon>
+            </a>
+
+            <a href="javascript:location.reload()"
+                class="text-decoration-none gap-3 btn btn-outline-light rounded-pill d-flex align-items-center mb-3 text-dark w-100 py-2">
+
+                <span class="flex-grow-1 text-start">Archived</span>
+                <arrow-icon>
+                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M5.93998 14.28C5.81332 14.28 5.68665 14.2333 5.58665 14.1333C5.39332 13.94 5.39332 13.62 5.58665 13.4267L9.93332 9.08001C10.2533 8.76001 10.2533 8.24001 9.93332 7.92001L5.58665 3.57335C5.39332 3.38001 5.39332 3.06001 5.58665 2.86668C5.77998 2.67335 6.09998 2.67335 6.29332 2.86668L10.64 7.21335C10.98 7.55335 11.1733 8.01335 11.1733 8.50001C11.1733 8.98668 10.9866 9.44668 10.64 9.78668L6.29332 14.1333C6.19332 14.2267 6.06665 14.28 5.93998 14.28Z"
+                            fill="#111827" />
+                    </svg>
+                </arrow-icon>
+            </a>
+            <br>
+        </div>
+    </offcanvas>
+
+</body>
+</html>

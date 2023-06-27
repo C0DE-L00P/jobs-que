@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply for Job</title>
+
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/apply-job-form.js" defer></script>
+    <script src="./assets/js/CountryCodes.js" defer></script>
+
+    <style>
+        .chosen-type-decoration:has(input[type="radio"]:checked) {
+            background-color: #c2dbfe !important;
+        }
+
+        .carousel-indicators {
+            all: unset;
+        }
+
+        .carousel-indicators *[data-bs-target="#carouselApplyIndicators"] {
+            box-sizing: none;
+            flex: auto;
+            width: initial;
+            height: auto;
+            padding-block: 0.5rem;
+            margin-right: initial;
+            margin-left: initial;
+            text-indent: initial;
+            cursor: pointer;
+            background-color: var(--bs-primary);
+            background-clip: padding-box;
+            border: none;
+            opacity: 1;
+            transition: opacity .6s ease;
+        }
+
+        button.nav-link+hr {
+            border: none;
+            border-bottom: 1px dashed var(--bs-secondary);
+            min-width: 24px;
+        }
+
+        button.nav-link:is(.active, .done)+hr {
+            border-bottom: 1px dashed var(--bs-primary);
+        }
+
+        button.nav-link>uncheck-icon {
+            display: block;
+            border: 1px solid var(--bs-secondary);
+            width: 44px;
+            aspect-ratio: 1/1;
+            line-height: 40px;
+            text-align: center;
+            font-weight: 500;
+            color: var(--bs-secondary);
+            margin-inline: auto;
+            border-radius: 50%;
+        }
+
+        button.nav-link>check-icon,
+        button.nav-link:is(.done)>uncheck-icon {
+            display: none;
+        }
+
+        button.nav-link:is(.active, .done)>uncheck-icon {
+            color: var(--bs-primary);
+            border: 1px solid var(--bs-primary);
+        }
+
+        button.nav-link:is(.done)>check-icon {
+            display: block;
+        }
+
+        button.nav-link:is(.active, .done)>small {
+            color: var(--bs-primary) !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="position-relative">
+        <backdrop class="d-grid position-fixed w-100 h-100 bg-dark bg-opacity-10 d-none"
+            style="z-index: 12; place-content: center;">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </backdrop>
+
+        <br>
+        <header class="container d-flex justify-content-between">
+
+            <a onclick="handleBack()" id="btn_back" class="btn bg-transparent rounded-pill"
+                data-bs-target="#carouselApplyIndicators" data-bs-slide-to="0">
+                <back-icon>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M9.56994 18.82C9.37994 18.82 9.18994 18.75 9.03994 18.6L2.96994 12.53C2.67994 12.24 2.67994 11.76 2.96994 11.47L9.03994 5.4C9.32994 5.11 9.80994 5.11 10.0999 5.4C10.3899 5.69 10.3899 6.17 10.0999 6.46L4.55994 12L10.0999 17.54C10.3899 17.83 10.3899 18.31 10.0999 18.6C9.95994 18.75 9.75994 18.82 9.56994 18.82Z"
+                            fill="#292D32" />
+                        <path
+                            d="M20.4999 12.75H3.66992C3.25992 12.75 2.91992 12.41 2.91992 12C2.91992 11.59 3.25992 11.25 3.66992 11.25H20.4999C20.9099 11.25 21.2499 11.59 21.2499 12C21.2499 12.41 20.9099 12.75 20.4999 12.75Z"
+                            fill="#292D32" />
+                    </svg>
+                </back-icon>
+            </a>
+
+            <h5>Apply Job</h5>
+            <i role="button" class="opacity-0" style="width: 90px;"></i>
+
+        </header>
+        <br>
+
+        <input type="hidden" disabled id="current_slide_bs" value="1">
+
+        <tabs
+            class="carousel-indicators d-flex flex-row-reverse justify-content-evenly gap-2 align-items-baseline container">
+            <button disabled class="nav-link rounded-2 p-1 bg-transparent border-0" type="button" id="step_3_indicator">
+                <uncheck-icon>3</uncheck-icon>
+
+                <check-icon>
+                    <svg width="45" height="44" viewBox="0 0 45 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M22.5 0C10.378 0 0.5 9.878 0.5 22C0.5 34.122 10.378 44 22.5 44C34.622 44 44.5 34.122 44.5 22C44.5 9.878 34.622 0 22.5 0ZM33.016 16.94L20.542 29.414C20.234 29.722 19.816 29.898 19.376 29.898C18.936 29.898 18.518 29.722 18.21 29.414L11.984 23.188C11.346 22.55 11.346 21.494 11.984 20.856C12.622 20.218 13.678 20.218 14.316 20.856L19.376 25.916L30.684 14.608C31.322 13.97 32.378 13.97 33.016 14.608C33.654 15.246 33.654 16.28 33.016 16.94Z"
+                            fill="#387FFB" />
+                    </svg>
+                </check-icon>
+
+                <small class="d-block text-center text-secondary mt-1" style="font-size: x-small;">Upload
+                    portfolio</small>
+            </button>
+            <hr>
+
+            <button disabled class="nav-link rounded-2 p-1 bg-transparent border-0" id="nav-type-of-work-tab"
+                type="button" id="step_2_indicator">
+                <uncheck-icon>2</uncheck-icon>
+
+                <check-icon>
+                    <svg width="45" height="44" viewBox="0 0 45 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M22.5 0C10.378 0 0.5 9.878 0.5 22C0.5 34.122 10.378 44 22.5 44C34.622 44 44.5 34.122 44.5 22C44.5 9.878 34.622 0 22.5 0ZM33.016 16.94L20.542 29.414C20.234 29.722 19.816 29.898 19.376 29.898C18.936 29.898 18.518 29.722 18.21 29.414L11.984 23.188C11.346 22.55 11.346 21.494 11.984 20.856C12.622 20.218 13.678 20.218 14.316 20.856L19.376 25.916L30.684 14.608C31.322 13.97 32.378 13.97 33.016 14.608C33.654 15.246 33.654 16.28 33.016 16.94Z"
+                            fill="#387FFB" />
+                    </svg>
+                </check-icon>
+
+                <small class="d-block text-center text-secondary mt-1" style="font-size: x-small;">Type of work</small>
+            </button>
+            <hr>
+
+            <button disabled class="nav-link active rounded-2 p-1 bg-transparent border-0 position-relative"
+                type="button" id="step_1_indicator">
+                <uncheck-icon>1</uncheck-icon>
+
+                <check-icon>
+                    <svg width="45" height="44" viewBox="0 0 45 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M22.5 0C10.378 0 0.5 9.878 0.5 22C0.5 34.122 10.378 44 22.5 44C34.622 44 44.5 34.122 44.5 22C44.5 9.878 34.622 0 22.5 0ZM33.016 16.94L20.542 29.414C20.234 29.722 19.816 29.898 19.376 29.898C18.936 29.898 18.518 29.722 18.21 29.414L11.984 23.188C11.346 22.55 11.346 21.494 11.984 20.856C12.622 20.218 13.678 20.218 14.316 20.856L19.376 25.916L30.684 14.608C31.322 13.97 32.378 13.97 33.016 14.608C33.654 15.246 33.654 16.28 33.016 16.94Z"
+                            fill="#387FFB" />
+                    </svg>
+                </check-icon>
+
+                <small class="d-block text-center text-primary mt-1" style="font-size: x-small;">Biodata</small>
+            </button>
+        </tabs>
+
+        <br>
+        <form id="applying_form" method="post">
+            <div id="carouselApplyIndicators" class="carousel slide">
+                <div class="carousel-inner container">
+                    <biodata-page class="carousel-item active container">
+                        <div class="d-block container">
+                            <h4 class="mb-1">Biodata</h4>
+                            <small class="text-secondary mb-4 d-block">Fill in your bio data correctly</small>
+
+                            <p class="mt-3 mb-1">Full Name <span class="text-danger">*</span></p>
+                            <input type="text" name="name" id="fullname" class="form-control" required>
+
+                            <p class="mt-3 mb-1">Email <span class="text-danger">*</span></p>
+                            <input type="email" name="email" id="email" class="form-control" required>
+
+                            <p class="mt-3 mb-1">No.Handphone <span class="text-danger">*</span></p>
+                            <div class="input-group">
+                                <div class="dropdown">
+                                    <button
+                                        class="btn btn-outline-light rounded-0 rounded-start text-secondary border border-1 border-secondary border-opacity-50 dropdown-toggle"
+                                        type="button" data-bs-toggle="dropdown" aria-expanded="false"
+                                        style="z-index: 0;">
+                                        <img src="./assets/images/flags/eg.svg" style="width: 28px;" class="rounded-1"
+                                            id="picked_country">
+                                    </button>
+                                    <ul class="dropdown-menu overflow-scroll mb-0 pb-0 bg-light border border-secondary border-opacity-10"
+                                        id="code_select_menu"
+                                        style="max-height: min(300px, 100vh); background-clip: unset; padding: 0!important; z-index: 8;">
+
+                                        <template id="flag_temp">
+                                            <li class="px-2 py-2 btn-outline-light border-0"
+                                                style="min-width: max-content!important">
+                                                <input type="radio" name="country_code" value="+20" checked
+                                                    class="dropdown-item d-none" id="country_code_1">
+                                                <label for="country_code_1" class="d-flex align-items-center gap-2">
+                                                    <img src="./assets/images/ar-flag.webp" alt="" style="width: 32px;">
+                                                    Egypt (+20)
+                                                </label>
+                                            </li>
+                                        </template>
+                                    </ul>
+                                </div>
+                                <input type="number" id="phone" name="mobile" class="form-control" value="1006667234"
+                                    required style="z-index: 0;">
+                            </div>
+                        </div>
+                    </biodata-page>
+
+                    <type-of-work-page class="carousel-item container">
+                        <div class="d-block container">
+                            <h4 class="mb-1">Type of work</h4>
+                            <small class="text-secondary mb-4 d-block">Fill in your data correctly</small>
+
+                            <types-list>
+                                <template>
+                                    <label for="type_of_work_2" role="button"
+                                        class="chosen-type-decoration rounded-3 d-flex align-items-center p-2 px-3"
+                                        style="border: 1px solid #ced4da;">
+                                        <div class="flex-grow-1">
+                                            <p class="mb-1">Senior UI Designer</p>
+                                            <div class="text-secondary"><small>CV.pdf</small> -
+                                                <small>Portfolio.pdf</small>
+                                            </div>
+                                        </div>
+                                        <input type="radio" value="full" name="work_type" id="type_of_work_2"
+                                            class="form-check-input">
+                                    </label>
+                                    <br>
+                                </template>
+                            </types-list>
+                        </div>
+                    </type-of-work-page>
+
+                    <upload-portfolio-page class="carousel-item container">
+                        <div class="container d-block">
+                            <h4 class="mb-1">Upload portfolio</h4>
+                            <small class="text-secondary mb-4 d-block">Fill in your data correctly</small>
+
+                            <p class="mt-3 mb-1 fw-semibold">Upload CV <span class="text-danger">*</span></p>
+                            <input id="cv_picker" type="file" name="cv_file"
+                                accept="application/msword, application/pdf" class="form-control d-none" required>
+                            <div class="w-100 py-3 rounded-3" style="border: 1px solid #d1d5db">
+                                <label for="cv_picker" class="text-center fw-semibold w-100" role="button"
+                                    id="cv_picker_label">
+                                    <br>
+                                    Pick a file
+                                    <br>
+                                    <br>
+                                </label>
+
+                                <small class="d-block text-center text-secondary mb-2 border border-1 border-secondary border-start-0 border-end-0 border-opacity-25 d-none">or choose from below</small>
+
+                                <cv_previewer class="d-flex align-items-center w-100 px-3 d-none">
+                                    <pdf-icon>
+                                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M13.7782 24.4667C13.4715 24.4667 13.2649 24.4967 13.1582 24.5267V26.4901C13.2849 26.5201 13.4432 26.5284 13.6615 26.5284C14.4599 26.5284 14.9515 26.1251 14.9515 25.4434C14.9515 24.8334 14.5282 24.4667 13.7782 24.4667ZM19.5899 24.4867C19.2565 24.4867 19.0399 24.5167 18.9115 24.5467V28.8967C19.0399 28.9267 19.2465 28.9267 19.4332 28.9267C20.7949 28.9367 21.6815 28.1867 21.6815 26.6001C21.6915 25.2167 20.8832 24.4867 19.5899 24.4867Z"
+                                                fill="#DB291F" />
+                                            <path
+                                                d="M23.9194 3.91904C23.5444 3.54397 23.0357 3.33325 22.5052 3.33325H10.0003C9.11627 3.33325 8.26842 3.68444 7.6433 4.30956C7.01818 4.93468 6.66699 5.78253 6.66699 6.66659V33.3333C6.66699 34.2173 7.01818 35.0652 7.6433 35.6903C8.26842 36.3154 9.11627 36.6666 10.0003 36.6666H30.0003C30.8844 36.6666 31.7322 36.3154 32.3573 35.6903C32.9825 35.0652 33.3337 34.2173 33.3337 33.3333V14.1617C33.3337 13.6312 33.1229 13.1225 32.7479 12.7475L23.9194 3.91904ZM15.8303 26.9833C15.3153 27.4666 14.5553 27.6833 13.6703 27.6833C13.4987 27.6851 13.3272 27.6751 13.157 27.6533V30.0299H11.667V23.4699C12.3394 23.3696 13.0189 23.3239 13.6987 23.3333C14.627 23.3333 15.287 23.5099 15.732 23.8649C16.1553 24.2016 16.442 24.7533 16.442 25.4033C16.4403 26.0566 16.2237 26.6083 15.8303 26.9833ZM22.1753 29.2416C21.4753 29.8233 20.4103 30.0999 19.1087 30.0999C18.3287 30.0999 17.777 30.0499 17.402 29.9999V23.4716C18.0747 23.3734 18.7539 23.3272 19.4337 23.3333C20.6953 23.3333 21.5153 23.5599 22.1553 24.0433C22.847 24.5566 23.2803 25.3749 23.2803 26.5499C23.2803 27.8216 22.8153 28.6999 22.1753 29.2416ZM28.3337 24.6166H25.7803V26.1349H28.167V27.3583H25.7803V30.0316H24.2703V23.3833H28.3337V24.6166ZM23.3337 14.9999H21.667V6.66659L30.0003 14.9999H23.3337Z"
+                                                fill="#DB291F" />
+                                        </svg>
+                                    </pdf-icon>
+
+                                    <div class="flex-grow-1 mx-2">
+                                        <p id="cv_picker_title" class="mb-0">Rafif Dian.CV</p>
+                                        <small id="cv_picker_info" class="text-secondary" style="font-size: 12px;">300
+                                            KB</small>
+                                    </div>
+
+                                    <label for="cv_picker" class="btn btn-outline-light border-0 p-1 mx-1" type="button"
+                                        id="cv_picker_edit">
+                                        <edit-icon>
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M5.53999 19.52C4.92999 19.52 4.35999 19.31 3.94999 18.92C3.42999 18.43 3.17999 17.69 3.26999 16.89L3.63999 13.65C3.70999 13.04 4.07999 12.23 4.50999 11.79L12.72 3.09999C14.77 0.929988 16.91 0.869988 19.08 2.91999C21.25 4.96999 21.31 7.10999 19.26 9.27999L11.05 17.97C10.63 18.42 9.84999 18.84 9.23999 18.94L6.01999 19.49C5.84999 19.5 5.69999 19.52 5.53999 19.52ZM15.93 2.90999C15.16 2.90999 14.49 3.38999 13.81 4.10999L5.59999 12.81C5.39999 13.02 5.16999 13.52 5.12999 13.81L4.75999 17.05C4.71999 17.38 4.79999 17.65 4.97999 17.82C5.15999 17.99 5.42999 18.05 5.75999 18L8.97999 17.45C9.26999 17.4 9.74999 17.14 9.94999 16.93L18.16 8.23999C19.4 6.91999 19.85 5.69999 18.04 3.99999C17.24 3.22999 16.55 2.90999 15.93 2.90999Z"
+                                                    fill="#3366FF" />
+                                                <path
+                                                    d="M17.3399 10.95C17.3199 10.95 17.2899 10.95 17.2699 10.95C14.1499 10.64 11.6399 8.26997 11.1599 5.16997C11.0999 4.75997 11.3799 4.37997 11.7899 4.30997C12.1999 4.24997 12.5799 4.52997 12.6499 4.93997C13.0299 7.35997 14.9899 9.21997 17.4299 9.45997C17.8399 9.49997 18.1399 9.86997 18.0999 10.28C18.0499 10.66 17.7199 10.95 17.3399 10.95Z"
+                                                    fill="#3366FF" />
+                                                <path
+                                                    d="M21 22.75H3C2.59 22.75 2.25 22.41 2.25 22C2.25 21.59 2.59 21.25 3 21.25H21C21.41 21.25 21.75 21.59 21.75 22C21.75 22.41 21.41 22.75 21 22.75Z"
+                                                    fill="#3366FF" />
+                                            </svg>
+                                        </edit-icon>
+                                    </label>
+
+                                    <button class="btn btn-outline-light border-0 p-1" type="button"
+                                        id="cv_picker_remove">
+                                        <remove-icon>
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M12 22.75C6.07 22.75 1.25 17.93 1.25 12C1.25 6.07 6.07 1.25 12 1.25C17.93 1.25 22.75 6.07 22.75 12C22.75 17.93 17.93 22.75 12 22.75ZM12 2.75C6.9 2.75 2.75 6.9 2.75 12C2.75 17.1 6.9 21.25 12 21.25C17.1 21.25 21.25 17.1 21.25 12C21.25 6.9 17.1 2.75 12 2.75Z"
+                                                    fill="#FF472B" />
+                                                <path
+                                                    d="M9.16986 15.58C8.97986 15.58 8.78986 15.51 8.63986 15.36C8.34986 15.07 8.34986 14.59 8.63986 14.3L14.2999 8.63999C14.5899 8.34999 15.0699 8.34999 15.3599 8.63999C15.6499 8.92999 15.6499 9.40998 15.3599 9.69998L9.69986 15.36C9.55986 15.51 9.35986 15.58 9.16986 15.58Z"
+                                                    fill="#FF472B" />
+                                                <path
+                                                    d="M14.8299 15.58C14.6399 15.58 14.4499 15.51 14.2999 15.36L8.63986 9.69998C8.34986 9.40998 8.34986 8.92999 8.63986 8.63999C8.92986 8.34999 9.40986 8.34999 9.69986 8.63999L15.3599 14.3C15.6499 14.59 15.6499 15.07 15.3599 15.36C15.2099 15.51 15.0199 15.58 14.8299 15.58Z"
+                                                    fill="#FF472B" />
+                                            </svg>
+                                        </remove-icon>
+                                    </button>
+                                </cv_previewer>
+                            </div>
+
+                            <p class="mt-3 mb-1 fw-semibold">Other File</p>
+                            <!-- <input type="file" id="other_file_picker" class="d-none"> -->
+                            <label for="cv_picker" role="button" style="border: 1px dashed var(--bs-primary);"
+                                class="p-3 rounded-3 bg-primary bg-opacity-10 text-center w-100">
+                                <upload-icon class="d-block ">
+                                    <svg width="57" height="56" viewBox="0 0 57 56" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="0.5" width="56" height="56" rx="28" fill="#D6E4FF" />
+                                        <path
+                                            d="M39.8335 25.5866H35.9802C32.8202 25.5866 30.2468 23.0133 30.2468 19.8533V16C30.2468 15.2666 29.6468 14.6666 28.9135 14.6666H23.2602C19.1535 14.6666 15.8335 17.3333 15.8335 22.0933V33.9066C15.8335 38.6666 19.1535 41.3333 23.2602 41.3333H33.7402C37.8468 41.3333 41.1668 38.6666 41.1668 33.9066V26.92C41.1668 26.1866 40.5668 25.5866 39.8335 25.5866ZM27.8735 30.04C27.6735 30.24 27.4202 30.3333 27.1668 30.3333C26.9135 30.3333 26.6602 30.24 26.4602 30.04L25.5002 29.08V34.6666C25.5002 35.2133 25.0468 35.6666 24.5002 35.6666C23.9535 35.6666 23.5002 35.2133 23.5002 34.6666V29.08L22.5402 30.04C22.1535 30.4266 21.5135 30.4266 21.1268 30.04C20.7402 29.6533 20.7402 29.0133 21.1268 28.6266L23.7935 25.96C23.8868 25.88 23.9802 25.8133 24.0868 25.76C24.1135 25.7466 24.1535 25.7333 24.1802 25.72C24.2602 25.6933 24.3402 25.68 24.4335 25.6666C24.4735 25.6666 24.5002 25.6666 24.5402 25.6666C24.6468 25.6666 24.7535 25.6933 24.8602 25.7333C24.8735 25.7333 24.8735 25.7333 24.8868 25.7333C24.9935 25.7733 25.1002 25.8533 25.1802 25.9333C25.1935 25.9466 25.2068 25.9466 25.2068 25.96L27.8735 28.6266C28.2602 29.0133 28.2602 29.6533 27.8735 30.04Z"
+                                            fill="#3366FF" />
+                                        <path
+                                            d="M35.7399 23.7467C37.0066 23.76 38.7666 23.76 40.2732 23.76C41.0332 23.76 41.4332 22.8667 40.8999 22.3334C38.9799 20.4 35.5399 16.92 33.5666 14.9467C33.0199 14.4 32.0732 14.7734 32.0732 15.5334V20.1867C32.0732 22.1334 33.7266 23.7467 35.7399 23.7467Z"
+                                            fill="#3366FF" />
+                                    </svg>
+                                </upload-icon>
+
+                                <br>
+                                <h6 class="mb-1">Upload your other file</h6>
+                                <small class="text-secondary d-block mb-3" style="font-size: 12px;">Max. file size 10
+                                    MB</small>
+
+                                <label for="cv_picker"
+                                    class=" rounded-pill w-100 bg-primary bg-opacity-10 text-primary btn btn-outline-primary"
+                                    type="button">
+                                    <upload-mini-icon class="mx-1">
+                                        <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M13.2169 18.5416H7.78356C3.69189 18.5416 1.94189 16.7916 1.94189 12.6999V12.5916C1.94189 8.89161 3.40023 7.10827 6.66689 6.79994C7.00023 6.77494 7.31689 7.02494 7.35023 7.36661C7.38356 7.70827 7.13356 8.01661 6.78356 8.04994C4.16689 8.29161 3.19189 9.52494 3.19189 12.5999V12.7083C3.19189 16.0999 4.39189 17.2999 7.78356 17.2999H13.2169C16.6086 17.2999 17.8086 16.0999 17.8086 12.7083V12.5999C17.8086 9.50827 16.8169 8.27494 14.1502 8.04994C13.8086 8.01661 13.5502 7.71661 13.5836 7.37494C13.6169 7.03327 13.9086 6.77494 14.2586 6.80827C17.5752 7.09161 19.0586 8.88327 19.0586 12.6083V12.7166C19.0586 16.7916 17.3086 18.5416 13.2169 18.5416Z"
+                                                fill="#3366FF" />
+                                            <path
+                                                d="M10.5 13.1251C10.1583 13.1251 9.875 12.8417 9.875 12.5001V3.01672C9.875 2.67506 10.1583 2.39172 10.5 2.39172C10.8417 2.39172 11.125 2.67506 11.125 3.01672V12.5001C11.125 12.8417 10.8417 13.1251 10.5 13.1251Z"
+                                                fill="#3366FF" />
+                                            <path
+                                                d="M13.2917 5.50003C13.1334 5.50003 12.975 5.4417 12.85 5.3167L10.5 2.9667L8.15003 5.3167C7.90837 5.55837 7.50837 5.55837 7.2667 5.3167C7.02503 5.07503 7.02503 4.67503 7.2667 4.43337L10.0584 1.6417C10.3 1.40003 10.7 1.40003 10.9417 1.6417L13.7334 4.43337C13.975 4.67503 13.975 5.07503 13.7334 5.3167C13.6167 5.4417 13.45 5.50003 13.2917 5.50003Z"
+                                                fill="#3366FF" />
+                                        </svg>
+                                    </upload-mini-icon>
+                                    <span class="fw-semibold">Add file</span>
+                                </label>
+
+                            </label>
+                        </div>
+                    </upload-portfolio-page>
+                </div>
+            </div>
+
+
+            <br><br>
+            <br><br>
+            <br>
+
+            <footer class="position-fixed bottom-0 start-0 end-0 px-4 pb-3 carousel-indicators"
+                style="background: linear-gradient(to top, white,rgba(255, 255, 255, 0.739), transparent)">
+                <button type="button" data-bs-target="#carouselApplyIndicators" data-bs-slide-to="1" id="btn_next"
+                    class="btn btn-primary w-100 rounded-pill mb-4" onclick="handleNext(event)">
+                    Next
+                </button>
+            </footer>
+
+        </form>
+    </main>
+
+    <div id="error-toast"
+        class="toast align-items-center text-bg-danger border-0 position-fixed top-0 start-0 end-0 m-3 mx-auto"
+        style="opacity: 0.9" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body">
+                Something went wrong
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                aria-label="Close"></button>
+        </div>
+    </div>
+
+</body>
+
+</html>

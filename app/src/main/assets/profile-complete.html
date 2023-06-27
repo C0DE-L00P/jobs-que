@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Complete</title>
+
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script defer src="./assets/js/profile-complete.js"></script>
+    <style>
+        button.nav-link.active {
+            background-color: #02337A !important;
+            color: white !important;
+        }
+
+        .main-meter {
+            border: 1px solid rgba(var(--bs-secondary-rgb), 0.25)
+        }
+
+        check-icon,
+        div.spinner-border {
+            display: none;
+        }
+
+        uncheck-icon {
+            display: initial;
+            opacity: 0.7;
+        }
+
+        .main-meter+i {
+            background-color: rgba(var(--bs-secondary-rgb), 0.25);
+            width: 1px;
+            height: 20px;
+        }
+
+
+        .loading div.spinner-border {
+            display: initial;
+        }
+
+        .loading uncheck-icon {
+            opacity: 0.3;
+        }
+
+
+        .completed {
+            border: 1px solid rgba(var(--bs-primary-rgb), 1);
+            background-color: rgba(var(--bs-primary-rgb), 0.1);
+        }
+
+        .completed check-icon {
+            display: initial
+        }
+
+        .completed uncheck-icon {
+            display: none
+        }
+
+        .main-meter.completed+i {
+            background-color: rgba(var(--bs-primary-rgb), 1);
+        }
+    </style>
+</head>
+
+<body>
+    <upper-part class="text-center">
+        <br>
+        <div class="d-flex justify-content-between align-items-center">
+
+            <a href="javascript:history.go(-1)" class="btn bg-transparent rounded-pill">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M9.56994 18.82C9.37994 18.82 9.18994 18.75 9.03994 18.6L2.96994 12.53C2.67994 12.24 2.67994 11.76 2.96994 11.47L9.03994 5.4C9.32994 5.11 9.80994 5.11 10.0999 5.4C10.3899 5.69 10.3899 6.17 10.0999 6.46L4.55994 12L10.0999 17.54C10.3899 17.83 10.3899 18.31 10.0999 18.6C9.95994 18.75 9.75994 18.82 9.56994 18.82Z"
+                        fill="#292D32" />
+                    <path
+                        d="M20.4999 12.75H3.66992C3.25992 12.75 2.91992 12.41 2.91992 12C2.91992 11.59 3.25992 11.25 3.66992 11.25H20.4999C20.9099 11.25 21.2499 11.59 21.2499 12C21.2499 12.41 20.9099 12.75 20.4999 12.75Z"
+                        fill="#292D32" />
+                </svg>
+            </a>
+
+            <h5 class="fw-semibold me-4">Complete Profile</h5>
+            <i class="opacity-0">---</i>
+        </div>
+        <br>
+    </upper-part>
+
+
+    <main>
+        <div class="d-grid position-relative" style="place-content: center;">
+            <progress-circle class="rounded-circle d-block"
+                style="width: 100px; aspect-ratio: 1/1; border: 6px solid #e5e7eb; transform: rotate(45deg);"></progress-circle>
+            <div class="position-absolute w-100 h-100 d-grid ">
+                <h5 class="m-auto fw-bold text-primary" id="percent_completed">0%</h5>
+            </div>
+        </div>
+        <small class="text-primary d-block text-center"><span id="count_completed">0</span>/4 Completed</small>
+        <small class="text-secondary  d-block text-center">Complete your profile before applying for a job</small>
+        <br>
+        <h3 class="text-center text-primary fw-bold d-none" id="all_done">Perfect</h3>
+
+        <list-of-sections class="d-block mt-2 container">
+            <a href="./profile-edit.html" id="a_info"
+                class="main-meter gap-2 align-items-center text-decoration-none text-dark rounded-3 d-flex px-2 py-2 loading">
+                <div class="d-grid position-relative">
+                    <div class="spinner-border text-primary position-absolute" role="status"
+                        style="width: 28px;height: 28px;">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+
+                    <check-icon>
+                        <svg width="28" height="29" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M14.0002 2.8335C7.57183 2.8335 2.3335 8.07183 2.3335 14.5002C2.3335 20.9285 7.57183 26.1668 14.0002 26.1668C20.4285 26.1668 25.6668 20.9285 25.6668 14.5002C25.6668 8.07183 20.4285 2.8335 14.0002 2.8335ZM19.5768 11.8168L12.9618 18.4318C12.7985 18.5952 12.5768 18.6885 12.3435 18.6885C12.1102 18.6885 11.8885 18.5952 11.7252 18.4318L8.4235 15.1302C8.08516 14.7918 8.08516 14.2318 8.4235 13.8935C8.76183 13.5552 9.32183 13.5552 9.66016 13.8935L12.3435 16.5768L18.3402 10.5802C18.6785 10.2418 19.2385 10.2418 19.5768 10.5802C19.9152 10.9185 19.9152 11.4668 19.5768 11.8168Z"
+                                fill="#3366FF" />
+                        </svg>
+                    </check-icon>
+
+                    <uncheck-icon>
+                        <svg width="28" height="29" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M14.0002 2.8335C7.57183 2.8335 2.3335 8.07183 2.3335 14.5002C2.3335 20.9285 7.57183 26.1668 14.0002 26.1668C20.4285 26.1668 25.6668 20.9285 25.6668 14.5002C25.6668 8.07183 20.4285 2.8335 14.0002 2.8335ZM19.5768 11.8168L12.9618 18.4318C12.7985 18.5952 12.5768 18.6885 12.3435 18.6885C12.1102 18.6885 11.8885 18.5952 11.7252 18.4318L8.4235 15.1302C8.08516 14.7918 8.08516 14.2318 8.4235 13.8935C8.76183 13.5552 9.32183 13.5552 9.66016 13.8935L12.3435 16.5768L18.3402 10.5802C18.6785 10.2418 19.2385 10.2418 19.5768 10.5802C19.9152 10.9185 19.9152 11.4668 19.5768 11.8168Z"
+                                fill="#9CA3AF" />
+                        </svg>
+
+                    </uncheck-icon>
+                </div>
+                <div class="flex-grow-1">
+                    <h6 class="mb-1">Personal Details</h6>
+                    <small class="text-secondary fs-7">Full name, email, phone number, and your address</small>
+                </div>
+                <arrow-icon>
+                    <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12.0248 16.1834C11.8664 16.1834 11.7081 16.1251 11.5831 16.0001C11.3414 15.7584 11.3414 15.3584 11.5831 15.1168L16.1998 10.5001L11.5831 5.88343C11.3414 5.64176 11.3414 5.24176 11.5831 5.0001C11.8248 4.75843 12.2248 4.75843 12.4664 5.0001L17.5248 10.0584C17.7664 10.3001 17.7664 10.7001 17.5248 10.9418L12.4664 16.0001C12.3414 16.1251 12.1831 16.1834 12.0248 16.1834Z"
+                            fill="#111827" />
+                        <path
+                            d="M16.9415 11.125H2.9165C2.57484 11.125 2.2915 10.8417 2.2915 10.5C2.2915 10.1583 2.57484 9.875 2.9165 9.875H16.9415C17.2832 9.875 17.5665 10.1583 17.5665 10.5C17.5665 10.8417 17.2832 11.125 16.9415 11.125Z"
+                            fill="#111827" />
+                    </svg>
+                </arrow-icon>
+            </a>
+            <i class="d-block mx-auto"></i>
+
+            <a href="./profile-education.html" id="a_edu"
+                class="main-meter gap-2 align-items-center text-decoration-none text-dark rounded-3 d-flex px-2 py-2 loading">
+                <div class="d-grid position-relative">
+                    <div class="spinner-border text-primary position-absolute" role="status"
+                        style="width: 28px;height: 28px;">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+
+                    <check-icon>
+                        <svg width="28" height="29" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M14.0002 2.8335C7.57183 2.8335 2.3335 8.07183 2.3335 14.5002C2.3335 20.9285 7.57183 26.1668 14.0002 26.1668C20.4285 26.1668 25.6668 20.9285 25.6668 14.5002C25.6668 8.07183 20.4285 2.8335 14.0002 2.8335ZM19.5768 11.8168L12.9618 18.4318C12.7985 18.5952 12.5768 18.6885 12.3435 18.6885C12.1102 18.6885 11.8885 18.5952 11.7252 18.4318L8.4235 15.1302C8.08516 14.7918 8.08516 14.2318 8.4235 13.8935C8.76183 13.5552 9.32183 13.5552 9.66016 13.8935L12.3435 16.5768L18.3402 10.5802C18.6785 10.2418 19.2385 10.2418 19.5768 10.5802C19.9152 10.9185 19.9152 11.4668 19.5768 11.8168Z"
+                                fill="#3366FF" />
+                        </svg>
+                    </check-icon>
+
+                    <uncheck-icon>
+                        <svg width="28" height="29" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M14.0002 2.8335C7.57183 2.8335 2.3335 8.07183 2.3335 14.5002C2.3335 20.9285 7.57183 26.1668 14.0002 26.1668C20.4285 26.1668 25.6668 20.9285 25.6668 14.5002C25.6668 8.07183 20.4285 2.8335 14.0002 2.8335ZM19.5768 11.8168L12.9618 18.4318C12.7985 18.5952 12.5768 18.6885 12.3435 18.6885C12.1102 18.6885 11.8885 18.5952 11.7252 18.4318L8.4235 15.1302C8.08516 14.7918 8.08516 14.2318 8.4235 13.8935C8.76183 13.5552 9.32183 13.5552 9.66016 13.8935L12.3435 16.5768L18.3402 10.5802C18.6785 10.2418 19.2385 10.2418 19.5768 10.5802C19.9152 10.9185 19.9152 11.4668 19.5768 11.8168Z"
+                                fill="#9CA3AF" />
+                        </svg>
+
+                    </uncheck-icon>
+                </div>
+                <div class="flex-grow-1">
+                    <h6 class="mb-1">Education</h6>
+                    <small class="text-secondary fs-7">Enter your educational history to be considered by the
+                        recruiter</small>
+                </div>
+                <arrow-icon>
+                    <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12.0248 16.1834C11.8664 16.1834 11.7081 16.1251 11.5831 16.0001C11.3414 15.7584 11.3414 15.3584 11.5831 15.1168L16.1998 10.5001L11.5831 5.88343C11.3414 5.64176 11.3414 5.24176 11.5831 5.0001C11.8248 4.75843 12.2248 4.75843 12.4664 5.0001L17.5248 10.0584C17.7664 10.3001 17.7664 10.7001 17.5248 10.9418L12.4664 16.0001C12.3414 16.1251 12.1831 16.1834 12.0248 16.1834Z"
+                            fill="#111827" />
+                        <path
+                            d="M16.9415 11.125H2.9165C2.57484 11.125 2.2915 10.8417 2.2915 10.5C2.2915 10.1583 2.57484 9.875 2.9165 9.875H16.9415C17.2832 9.875 17.5665 10.1583 17.5665 10.5C17.5665 10.8417 17.2832 11.125 16.9415 11.125Z"
+                            fill="#111827" />
+                    </svg>
+                </arrow-icon>
+            </a>
+            <i class="d-block mx-auto"></i>
+
+
+            <a href="./profile-experience.html" id="a_exp"
+                class="main-meter gap-2 align-items-center text-decoration-none text-dark rounded-3 d-flex px-2 py-2 loading">
+                <div class="d-grid position-relative">
+                    <div class="spinner-border text-primary position-absolute" role="status"
+                        style="width: 28px;height: 28px;">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+
+                    <check-icon>
+                        <svg width="28" height="29" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M14.0002 2.8335C7.57183 2.8335 2.3335 8.07183 2.3335 14.5002C2.3335 20.9285 7.57183 26.1668 14.0002 26.1668C20.4285 26.1668 25.6668 20.9285 25.6668 14.5002C25.6668 8.07183 20.4285 2.8335 14.0002 2.8335ZM19.5768 11.8168L12.9618 18.4318C12.7985 18.5952 12.5768 18.6885 12.3435 18.6885C12.1102 18.6885 11.8885 18.5952 11.7252 18.4318L8.4235 15.1302C8.08516 14.7918 8.08516 14.2318 8.4235 13.8935C8.76183 13.5552 9.32183 13.5552 9.66016 13.8935L12.3435 16.5768L18.3402 10.5802C18.6785 10.2418 19.2385 10.2418 19.5768 10.5802C19.9152 10.9185 19.9152 11.4668 19.5768 11.8168Z"
+                                fill="#3366FF" />
+                        </svg>
+                    </check-icon>
+
+                    <uncheck-icon>
+                        <svg width="28" height="29" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M14.0002 2.8335C7.57183 2.8335 2.3335 8.07183 2.3335 14.5002C2.3335 20.9285 7.57183 26.1668 14.0002 26.1668C20.4285 26.1668 25.6668 20.9285 25.6668 14.5002C25.6668 8.07183 20.4285 2.8335 14.0002 2.8335ZM19.5768 11.8168L12.9618 18.4318C12.7985 18.5952 12.5768 18.6885 12.3435 18.6885C12.1102 18.6885 11.8885 18.5952 11.7252 18.4318L8.4235 15.1302C8.08516 14.7918 8.08516 14.2318 8.4235 13.8935C8.76183 13.5552 9.32183 13.5552 9.66016 13.8935L12.3435 16.5768L18.3402 10.5802C18.6785 10.2418 19.2385 10.2418 19.5768 10.5802C19.9152 10.9185 19.9152 11.4668 19.5768 11.8168Z"
+                                fill="#9CA3AF" />
+                        </svg>
+
+                    </uncheck-icon>
+                </div>
+                <div class="flex-grow-1">
+                    <h6 class="mb-1">Experience</h6>
+                    <small class="text-secondary fs-7">Enter your work experience to be considered by the
+                        recruiter</small>
+                </div>
+                <arrow-icon>
+                    <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12.0248 16.1834C11.8664 16.1834 11.7081 16.1251 11.5831 16.0001C11.3414 15.7584 11.3414 15.3584 11.5831 15.1168L16.1998 10.5001L11.5831 5.88343C11.3414 5.64176 11.3414 5.24176 11.5831 5.0001C11.8248 4.75843 12.2248 4.75843 12.4664 5.0001L17.5248 10.0584C17.7664 10.3001 17.7664 10.7001 17.5248 10.9418L12.4664 16.0001C12.3414 16.1251 12.1831 16.1834 12.0248 16.1834Z"
+                            fill="#111827" />
+                        <path
+                            d="M16.9415 11.125H2.9165C2.57484 11.125 2.2915 10.8417 2.2915 10.5C2.2915 10.1583 2.57484 9.875 2.9165 9.875H16.9415C17.2832 9.875 17.5665 10.1583 17.5665 10.5C17.5665 10.8417 17.2832 11.125 16.9415 11.125Z"
+                            fill="#111827" />
+                    </svg>
+                </arrow-icon>
+            </a>
+            <i class="d-block mx-auto"></i>
+
+            <a href="./profile-portfolio.html" id="a_port"
+                class="main-meter gap-2 align-items-center text-decoration-none text-dark rounded-3 d-flex px-2 py-2 mb-3 loading">
+                <div class="d-grid position-relative">
+                    <div class="spinner-border text-primary position-absolute" role="status"
+                        style="width: 28px;height: 28px;">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+
+                    <check-icon>
+                        <svg width="28" height="29" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M14.0002 2.8335C7.57183 2.8335 2.3335 8.07183 2.3335 14.5002C2.3335 20.9285 7.57183 26.1668 14.0002 26.1668C20.4285 26.1668 25.6668 20.9285 25.6668 14.5002C25.6668 8.07183 20.4285 2.8335 14.0002 2.8335ZM19.5768 11.8168L12.9618 18.4318C12.7985 18.5952 12.5768 18.6885 12.3435 18.6885C12.1102 18.6885 11.8885 18.5952 11.7252 18.4318L8.4235 15.1302C8.08516 14.7918 8.08516 14.2318 8.4235 13.8935C8.76183 13.5552 9.32183 13.5552 9.66016 13.8935L12.3435 16.5768L18.3402 10.5802C18.6785 10.2418 19.2385 10.2418 19.5768 10.5802C19.9152 10.9185 19.9152 11.4668 19.5768 11.8168Z"
+                                fill="#3366FF" />
+                        </svg>
+                    </check-icon>
+
+                    <uncheck-icon>
+                        <svg width="28" height="29" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M14.0002 2.8335C7.57183 2.8335 2.3335 8.07183 2.3335 14.5002C2.3335 20.9285 7.57183 26.1668 14.0002 26.1668C20.4285 26.1668 25.6668 20.9285 25.6668 14.5002C25.6668 8.07183 20.4285 2.8335 14.0002 2.8335ZM19.5768 11.8168L12.9618 18.4318C12.7985 18.5952 12.5768 18.6885 12.3435 18.6885C12.1102 18.6885 11.8885 18.5952 11.7252 18.4318L8.4235 15.1302C8.08516 14.7918 8.08516 14.2318 8.4235 13.8935C8.76183 13.5552 9.32183 13.5552 9.66016 13.8935L12.3435 16.5768L18.3402 10.5802C18.6785 10.2418 19.2385 10.2418 19.5768 10.5802C19.9152 10.9185 19.9152 11.4668 19.5768 11.8168Z"
+                                fill="#9CA3AF" />
+                        </svg>
+
+                    </uncheck-icon>
+                </div>
+                <div class="flex-grow-1">
+                    <h6 class="mb-1">Portfolio</h6>
+                    <small class="text-secondary fs-7">Create your portfolio. Applying for various types of jobs is
+                        easier.</small>
+                </div>
+                <arrow-icon>
+                    <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12.0248 16.1834C11.8664 16.1834 11.7081 16.1251 11.5831 16.0001C11.3414 15.7584 11.3414 15.3584 11.5831 15.1168L16.1998 10.5001L11.5831 5.88343C11.3414 5.64176 11.3414 5.24176 11.5831 5.0001C11.8248 4.75843 12.2248 4.75843 12.4664 5.0001L17.5248 10.0584C17.7664 10.3001 17.7664 10.7001 17.5248 10.9418L12.4664 16.0001C12.3414 16.1251 12.1831 16.1834 12.0248 16.1834Z"
+                            fill="#111827" />
+                        <path
+                            d="M16.9415 11.125H2.9165C2.57484 11.125 2.2915 10.8417 2.2915 10.5C2.2915 10.1583 2.57484 9.875 2.9165 9.875H16.9415C17.2832 9.875 17.5665 10.1583 17.5665 10.5C17.5665 10.8417 17.2832 11.125 16.9415 11.125Z"
+                            fill="#111827" />
+                    </svg>
+                </arrow-icon>
+            </a>
+        </list-of-sections>
+        <br><br><br>
+    </main>
+</body>
+
+</html>

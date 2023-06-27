@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <style>
+        path {
+            fill: var(--bs-dark) !important;
+        }
+
+        input[type=checkbox]:checked+label {
+            background-color: rgba(var(--bs-primary-rgb), 0.1) !important;
+            border-color: var(--bs-primary) !important;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 15px;
+        }
+
+        input[type=checkbox]:checked+label path {
+            fill: var(--bs-primary) !important;
+        }
+
+        input[type=checkbox]:checked+label div {
+            border-color: var(--bs-primary) !important;
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="javascript:location.replace('./create-account-3.html')" target="_self" style="height: 100vh"
+        class="d-flex flex-column justify-content-between container">
+        <upper-part>
+            <br>
+            <h2 class="container">What type of work are you interested in?</h2>
+            <small class="text-secondary container d-block">Tell us what you're interested in so we can customise the
+                app for your needs.</small>
+            <br>
+            <br>
+
+            <cards-grid class="d-grid gap-2"
+                style="place-content: center; grid-template-columns: repeat(auto-fit,minmax(44%, 140px));">
+                <template>
+                    <input type="checkbox" id="choice_id">
+                    <label for="choice_id" class="rounded-2 bg-primary p-2" id="choice_id_label">
+                        <img src="choice_img" id="choice_img" alt="img" class="d-block">
+                        <p>Choice Title</p>
+                    </label>
+                </template>
+            </cards-grid>
+        </upper-part>
+        <br><br>
+
+
+
+        <footer class="position-fixed bottom-0 start-0 end-0 px-4 pb-3"
+            style="background: linear-gradient(to top, white,rgba(255, 255, 255, 0.739), transparent)">
+            <button disabled class="btn btn-secondary rounded-pill w-100" id="form_submit_btn" type="submit">Next</button>
+        </footer>
+    </form>
+</body>
+
+<script src="./assets/js/create-account-2.js" defer></script>
+
+</html>

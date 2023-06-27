@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Security</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .notification-item:hover {
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+
+<body style="height: 100vh">
+    <header class="position-relative d-flex justify-content-between align-items-center pt-3 pb-3 top-0 w-100">
+        <a href="javascript:history.go(-1)" class="btn bg-transparent rounded-pill">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M9.56994 18.82C9.37994 18.82 9.18994 18.75 9.03994 18.6L2.96994 12.53C2.67994 12.24 2.67994 11.76 2.96994 11.47L9.03994 5.4C9.32994 5.11 9.80994 5.11 10.0999 5.4C10.3899 5.69 10.3899 6.17 10.0999 6.46L4.55994 12L10.0999 17.54C10.3899 17.83 10.3899 18.31 10.0999 18.6C9.95994 18.75 9.75994 18.82 9.56994 18.82Z"
+                    fill="#292D32" />
+                <path
+                    d="M20.4999 12.75H3.66992C3.25992 12.75 2.91992 12.41 2.91992 12C2.91992 11.59 3.25992 11.25 3.66992 11.25H20.4999C20.9099 11.25 21.2499 11.59 21.2499 12C21.2499 12.41 20.9099 12.75 20.4999 12.75Z"
+                    fill="#292D32" />
+            </svg>
+        </a>
+
+        <h5 class="fw-semibold me-4">Login and Security</h5>
+        <i class="opacity-0">---</i>
+    </header>
+
+    <account-access-section>
+        <p class="px-4 bg-light text-secondary fw-semibold w-100 text-opacity-75 py-1">Account access</p>
+        
+        <access-item>
+            <span class="text-decoration-none py-3 gap-3 btn btn-outline-light border-0 d-flex align-items-center w-100 text-dark rounded-0">
+
+                <span class="flex-grow-1 text-start fs-7">Email Address</span>
+                <div>
+                    <small class="text-secondary fs-7" id="personal_email"></small>
+                </div>
+            </span>
+            <hr class="mx-4 my-0 border-secondary border-opacity-50" />
+        </access-item>
+        
+        <access-item>
+            <a href="./profile-edit.html"
+                class="text-decoration-none py-3 gap-3 btn btn-outline-light border-0 d-flex align-items-center w-100 text-dark rounded-0">
+
+                <span class="flex-grow-1 text-start fs-7">Phone number</span>
+                <div>
+                    <small class="text-secondary fs-7" id="personal_mobile"></small>
+                    <arrow-icon>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M9.61992 12.5467C9.49325 12.5467 9.36658 12.5 9.26658 12.4C9.07325 12.2067 9.07325 11.8867 9.26658 11.6933L12.9599 8L9.26658 4.30667C9.07325 4.11334 9.07325 3.79334 9.26658 3.6C9.45992 3.40667 9.77992 3.40667 9.97325 3.6L14.0199 7.64667C14.2132 7.84 14.2132 8.16 14.0199 8.35333L9.97325 12.4C9.87325 12.5 9.74658 12.5467 9.61992 12.5467Z"
+                                fill="#111827" />
+                            <path
+                                d="M13.5535 8.5H2.3335C2.06016 8.5 1.8335 8.27333 1.8335 8C1.8335 7.72667 2.06016 7.5 2.3335 7.5H13.5535C13.8268 7.5 14.0535 7.72667 14.0535 8C14.0535 8.27333 13.8268 8.5 13.5535 8.5Z"
+                                fill="#111827" />
+                        </svg>
+                    </arrow-icon>
+                </div>
+            </a>
+            <hr class="mx-4 my-0 border-secondary border-opacity-50" />
+        </access-item>
+        
+        <access-item>
+            <a href="./profile-security-password.html"
+                class="text-decoration-none py-3 gap-3 btn btn-outline-light border-0 d-flex align-items-center w-100 text-dark rounded-0">
+
+                <span class="flex-grow-1 text-start fs-7">Change password</span>
+                <div>
+                    <arrow-icon>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M9.61992 12.5467C9.49325 12.5467 9.36658 12.5 9.26658 12.4C9.07325 12.2067 9.07325 11.8867 9.26658 11.6933L12.9599 8L9.26658 4.30667C9.07325 4.11334 9.07325 3.79334 9.26658 3.6C9.45992 3.40667 9.77992 3.40667 9.97325 3.6L14.0199 7.64667C14.2132 7.84 14.2132 8.16 14.0199 8.35333L9.97325 12.4C9.87325 12.5 9.74658 12.5467 9.61992 12.5467Z"
+                                fill="#111827" />
+                            <path
+                                d="M13.5535 8.5H2.3335C2.06016 8.5 1.8335 8.27333 1.8335 8C1.8335 7.72667 2.06016 7.5 2.3335 7.5H13.5535C13.8268 7.5 14.0535 7.72667 14.0535 8C14.0535 8.27333 13.8268 8.5 13.5535 8.5Z"
+                                fill="#111827" />
+                        </svg>
+                    </arrow-icon>
+                </div>
+            </a>
+            <hr class="mx-4 my-0 border-secondary border-opacity-50" />
+        </access-item>
+        
+        <access-item>
+            <a href=""
+                class="text-decoration-none py-3 gap-3 btn btn-outline-light border-0 d-flex align-items-center w-100 text-dark rounded-0">
+
+                <span class="flex-grow-1 text-start fs-7">Two-step verification</span>
+                <div>
+                    <small class="text-secondary fs-7 mx-1">Not Active</small>
+                    <arrow-icon>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M9.61992 12.5467C9.49325 12.5467 9.36658 12.5 9.26658 12.4C9.07325 12.2067 9.07325 11.8867 9.26658 11.6933L12.9599 8L9.26658 4.30667C9.07325 4.11334 9.07325 3.79334 9.26658 3.6C9.45992 3.40667 9.77992 3.40667 9.97325 3.6L14.0199 7.64667C14.2132 7.84 14.2132 8.16 14.0199 8.35333L9.97325 12.4C9.87325 12.5 9.74658 12.5467 9.61992 12.5467Z"
+                                fill="#111827" />
+                            <path
+                                d="M13.5535 8.5H2.3335C2.06016 8.5 1.8335 8.27333 1.8335 8C1.8335 7.72667 2.06016 7.5 2.3335 7.5H13.5535C13.8268 7.5 14.0535 7.72667 14.0535 8C14.0535 8.27333 13.8268 8.5 13.5535 8.5Z"
+                                fill="#111827" />
+                        </svg>
+                    </arrow-icon>
+                </div>
+            </a>
+            <hr class="mx-4 my-0 border-secondary border-opacity-50" />
+        </access-item>
+
+        <access-item>
+            <a href=""
+                class="text-decoration-none py-3 gap-3 btn btn-outline-light border-0 d-flex align-items-center w-100 text-dark rounded-0">
+
+                <span class="flex-grow-1 text-start fs-7">Face ID</span>
+                <div>
+                    <arrow-icon>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M9.61992 12.5467C9.49325 12.5467 9.36658 12.5 9.26658 12.4C9.07325 12.2067 9.07325 11.8867 9.26658 11.6933L12.9599 8L9.26658 4.30667C9.07325 4.11334 9.07325 3.79334 9.26658 3.6C9.45992 3.40667 9.77992 3.40667 9.97325 3.6L14.0199 7.64667C14.2132 7.84 14.2132 8.16 14.0199 8.35333L9.97325 12.4C9.87325 12.5 9.74658 12.5467 9.61992 12.5467Z"
+                                fill="#111827" />
+                            <path
+                                d="M13.5535 8.5H2.3335C2.06016 8.5 1.8335 8.27333 1.8335 8C1.8335 7.72667 2.06016 7.5 2.3335 7.5H13.5535C13.8268 7.5 14.0535 7.72667 14.0535 8C14.0535 8.27333 13.8268 8.5 13.5535 8.5Z"
+                                fill="#111827" />
+                        </svg>
+                    </arrow-icon>
+                </div>
+            </a>
+            <hr class="mx-4 my-0 border-secondary border-opacity-50" />
+        </access-item>
+        
+    
+
+    </account-access-section>
+
+    <br>
+
+    <br>
+
+    <br><br>
+    <br><br>
+
+<script>
+    const user = JSON.parse(localStorage.getItem('user'))
+    document.getElementById('personal_email').innerText = user.email
+    document.getElementById('personal_mobile').innerText = user.mobile
+</script>
+
+</body>
+
+</html>

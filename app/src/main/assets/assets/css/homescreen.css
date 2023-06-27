@@ -1,0 +1,74 @@
+.hide-when-empty {
+    background-color: transparent;
+    border: none;
+    display: block;
+    /* background-color: #091A7A; */
+}
+
+div:has(input#inp_search) .hide-when-empty {
+    display: inline-block;
+    /* background-color: grey ; */
+}
+
+div:has(input#inp_search:empty) .hide-when-empty {
+    display: inline-block;
+    /* background-color: red; */
+}
+
+.swiper {
+    width: 100%;
+    height: max-content;
+    user-select: none;
+    padding-inline-start: 8px;
+}
+
+.swiper-slide {
+    margin-inline-start: 8px;
+    height: 100%;
+    min-width: 320px;
+    width: 80%;
+    max-width: 400px;
+    background-color: var(--bs-light);
+    color: var(--bs-dark) !important;
+    transition: background-color 0.2s ease;
+}
+.swiper-slide a{
+    color: var(--bs-dark);
+}
+.swiper-slide a small{
+    color: rgba(0,0,0,0.5);
+}
+
+.swiper-slide-active {
+    background-color: #091A7A;
+    color: white !important;
+}
+.swiper-slide-active a{
+    color: white;
+}
+.swiper-slide-active a small{
+    color: rgba(255,255,255,0.5);
+}
+
+.suggestSwiper {
+    text-align: start;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.suggestSwiper p {
+    user-select: auto;
+}
+
+save-unclicked-icon,
+input[type=checkbox]:is(.save-suggested, .save-recent):checked+label>save-clicked-icon {
+    display: block;
+}
+
+save-clicked-icon,
+input[type=checkbox]:is(.save-suggested, .save-recent):checked+label>save-unclicked-icon {
+    display: none;
+}

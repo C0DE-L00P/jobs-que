@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Job</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/search.js" defer></script>
+    <style>
+        input[type=checkbox][name=job_type]+label {
+            background-color: transparent;
+            color: rgba(var(--bs-secondary-rgb), 0.8);
+            border: 1px solid rgba(var(--bs-secondary-rgb), 0.5);
+        }
+
+        input[type=checkbox][name=job_type]:checked+label {
+            background-color: rgba(var(--bs-primary-rgb), 0.2);
+            color: var(--bs-primary);
+            border: 1px solid var(--bs-primary);
+        }
+    </style>
+</head>
+
+<body>
+
+    <br>
+    <header class="d-flex container">
+        <a href="javascript:history.back()" class="btn bg-transparent rounded-pill">
+            <back-icon>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M9.56994 18.82C9.37994 18.82 9.18994 18.75 9.03994 18.6L2.96994 12.53C2.67994 12.24 2.67994 11.76 2.96994 11.47L9.03994 5.4C9.32994 5.11 9.80994 5.11 10.0999 5.4C10.3899 5.69 10.3899 6.17 10.0999 6.46L4.55994 12L10.0999 17.54C10.3899 17.83 10.3899 18.31 10.0999 18.6C9.95994 18.75 9.75994 18.82 9.56994 18.82Z"
+                        fill="#292D32" />
+                    <path
+                        d="M20.4999 12.75H3.66992C3.25992 12.75 2.91992 12.41 2.91992 12C2.91992 11.59 3.25992 11.25 3.66992 11.25H20.4999C20.9099 11.25 21.2499 11.59 21.2499 12C21.2499 12.41 20.9099 12.75 20.4999 12.75Z"
+                        fill="#292D32" />
+                </svg>
+            </back-icon>
+        </a>
+
+        <form class="d-block container" id="search_form" onsubmit="submitHandle(event)">
+            <div class="position-relative rounded-pill pe-3"
+                style="padding-inline-start: 4px;border: 1px solid #d1d5db">
+                <label for="inp_search" class="rounded-pill d-flex align-items-center pe-1">
+                    <button type="submit" class="btn btn-outline-light border-0 d-grid p-0 px-2 rounded-circle"
+                        style="place-content: center;">
+                        <search-icon class="mb-1">
+                            <svg width="16" height="16" viewBox="0 0 20 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9.58342 18.1248C4.87508 18.1248 1.04175 14.2915 1.04175 9.58317C1.04175 4.87484 4.87508 1.0415 9.58342 1.0415C14.2917 1.0415 18.1251 4.87484 18.1251 9.58317C18.1251 14.2915 14.2917 18.1248 9.58342 18.1248ZM9.58342 2.2915C5.55841 2.2915 2.29175 5.5665 2.29175 9.58317C2.29175 13.5998 5.55841 16.8748 9.58342 16.8748C13.6084 16.8748 16.8751 13.5998 16.8751 9.58317C16.8751 5.5665 13.6084 2.2915 9.58342 2.2915Z"
+                                    fill="#292D32" />
+                                <path
+                                    d="M18.3333 18.9585C18.175 18.9585 18.0166 18.9002 17.8916 18.7752L16.225 17.1085C15.9833 16.8669 15.9833 16.4669 16.225 16.2252C16.4666 15.9835 16.8666 15.9835 17.1083 16.2252L18.775 17.8919C19.0166 18.1335 19.0166 18.5335 18.775 18.7752C18.65 18.9002 18.4916 18.9585 18.3333 18.9585Z"
+                                    fill="#292D32" />
+                            </svg>
+                        </search-icon>
+                    </button>
+
+                    <input type="text" name="name" id="inp_search" class="form-control border-0 px-1" value=""
+                        placeholder="Search...">
+                </label>
+
+
+                <button type="button"
+                    class="bg-white border-0 hide-when-empty position-absolute end-0 top-0 bottom-0 align-items-center p-0 my-auto rounded-2 me-2"
+                    id="reset_search">
+                    <close-icon class="d-inline-block pb-1 bg-white">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M9.99984 18.9584C5.05817 18.9584 1.0415 14.9417 1.0415 10C1.0415 5.05835 5.05817 1.04169 9.99984 1.04169C14.9415 1.04169 18.9582 5.05835 18.9582 10C18.9582 14.9417 14.9415 18.9584 9.99984 18.9584ZM9.99984 2.29169C5.74984 2.29169 2.2915 5.75002 2.2915 10C2.2915 14.25 5.74984 17.7084 9.99984 17.7084C14.2498 17.7084 17.7082 14.25 17.7082 10C17.7082 5.75002 14.2498 2.29169 9.99984 2.29169Z"
+                                fill="#111827" />
+                            <path
+                                d="M7.64147 12.9833C7.48314 12.9833 7.3248 12.925 7.1998 12.8C6.95814 12.5583 6.95814 12.1583 7.1998 11.9167L11.9165 7.19999C12.1581 6.95832 12.5581 6.95832 12.7998 7.19999C13.0415 7.44165 13.0415 7.84165 12.7998 8.08332L8.08314 12.8C7.96647 12.925 7.7998 12.9833 7.64147 12.9833Z"
+                                fill="#111827" />
+                            <path
+                                d="M12.3581 12.9833C12.1998 12.9833 12.0415 12.925 11.9165 12.8L7.1998 8.08332C6.95814 7.84165 6.95814 7.44165 7.1998 7.19999C7.44147 6.95832 7.84147 6.95832 8.08314 7.19999L12.7998 11.9167C13.0415 12.1583 13.0415 12.5583 12.7998 12.8C12.6748 12.925 12.5165 12.9833 12.3581 12.9833Z"
+                                fill="#111827" />
+                        </svg>
+
+                    </close-icon>
+                </button>
+            </div>
+        </form>
+    </header>
+
+
+    <main>
+        <page-empty-searchbox>
+            <br>
+            <recent-search-section>
+
+                <div class="bg-light p-2 px-4 mb-4">
+                    <h6 class="text-secondary fw-normal mb-0">Recent searches</h6>
+                </div>
+
+                <recent-search-list class="d-block container">
+                    <template id="recent_template">
+                        <search-item class="d-flex justify-content-between mt-3">
+                            <div>
+                                <recent-icon>
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M7.99992 15.1667C4.04659 15.1667 0.833252 11.9533 0.833252 8.00001C0.833252 4.04668 4.04659 0.833344 7.99992 0.833344C11.9533 0.833344 15.1666 4.04668 15.1666 8.00001C15.1666 11.9533 11.9533 15.1667 7.99992 15.1667ZM7.99992 1.83334C4.59992 1.83334 1.83325 4.60001 1.83325 8.00001C1.83325 11.4 4.59992 14.1667 7.99992 14.1667C11.3999 14.1667 14.1666 11.4 14.1666 8.00001C14.1666 4.60001 11.3999 1.83334 7.99992 1.83334Z"
+                                            fill="#111827" />
+                                        <path
+                                            d="M10.4733 10.62C10.3867 10.62 10.3 10.6 10.22 10.5467L8.15334 9.31332C7.64001 9.00665 7.26001 8.33332 7.26001 7.73999V5.00665C7.26001 4.73332 7.48668 4.50665 7.76001 4.50665C8.03334 4.50665 8.26001 4.73332 8.26001 5.00665V7.73999C8.26001 7.97999 8.46001 8.33332 8.66668 8.45332L10.7333 9.68665C10.9733 9.82665 11.0467 10.1333 10.9067 10.3733C10.8067 10.5333 10.64 10.62 10.4733 10.62Z"
+                                            fill="#111827" />
+                                    </svg>
+                                </recent-icon>
+                                <p class="mx-2 d-inline-block mb-0">Junior UI Designer</p>
+                            </div>
+
+                            <button class="btn bg-transparent rounded-circle border-0 p-0">
+                                <delete-icon>
+                                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M10.9999 20.8542C5.56409 20.8542 1.14575 16.4358 1.14575 11C1.14575 5.56418 5.56409 1.14584 10.9999 1.14584C16.4358 1.14584 20.8541 5.56418 20.8541 11C20.8541 16.4358 16.4358 20.8542 10.9999 20.8542ZM10.9999 2.52084C6.32492 2.52084 2.52075 6.32501 2.52075 11C2.52075 15.675 6.32492 19.4792 10.9999 19.4792C15.6749 19.4792 19.4791 15.675 19.4791 11C19.4791 6.32501 15.6749 2.52084 10.9999 2.52084Z"
+                                            fill="#FF472B" />
+                                        <path
+                                            d="M8.40591 14.2817C8.23174 14.2817 8.05758 14.2175 7.92008 14.08C7.65424 13.8142 7.65424 13.3742 7.92008 13.1083L13.1084 7.91999C13.3742 7.65415 13.8142 7.65415 14.0801 7.91999C14.3459 8.18582 14.3459 8.62582 14.0801 8.89165L8.89174 14.08C8.76341 14.2175 8.58008 14.2817 8.40591 14.2817Z"
+                                            fill="#FF472B" />
+                                        <path
+                                            d="M13.5942 14.2817C13.4201 14.2817 13.2459 14.2175 13.1084 14.08L7.92008 8.89165C7.65424 8.62582 7.65424 8.18582 7.92008 7.91999C8.18591 7.65415 8.62591 7.65415 8.89174 7.91999L14.0801 13.1083C14.3459 13.3742 14.3459 13.8142 14.0801 14.08C13.9426 14.2175 13.7684 14.2817 13.5942 14.2817Z"
+                                            fill="#FF472B" />
+                                    </svg>
+
+                                </delete-icon>
+                            </button>
+                        </search-item>
+
+                    </template>
+                </recent-search-list>
+            </recent-search-section>
+
+
+            <br>
+            <popular-search-section>
+
+                <div class="bg-light p-2 px-4 mb-4">
+                    <h6 class="text-secondary fw-normal mb-0">Popular searches</h6>
+                </div>
+
+                <popular-search-list class="d-block container">
+                    <popular-item class="d-flex justify-content-between mt-3" id="popular_search">
+                        <div>
+                            <searchy-icon>
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M13.3333 3.83333H9.33325C9.05992 3.83333 8.83325 3.60666 8.83325 3.33333C8.83325 3.05999 9.05992 2.83333 9.33325 2.83333H13.3333C13.6066 2.83333 13.8333 3.05999 13.8333 3.33333C13.8333 3.60666 13.6066 3.83333 13.3333 3.83333Z"
+                                        fill="#111827" />
+                                    <path
+                                        d="M11.3333 5.83333H9.33325C9.05992 5.83333 8.83325 5.60666 8.83325 5.33333C8.83325 5.05999 9.05992 4.83333 9.33325 4.83333H11.3333C11.6066 4.83333 11.8333 5.05999 11.8333 5.33333C11.8333 5.60666 11.6066 5.83333 11.3333 5.83333Z"
+                                        fill="#111827" />
+                                    <path
+                                        d="M7.66659 14.5C3.89992 14.5 0.833252 11.4333 0.833252 7.66666C0.833252 3.89999 3.89992 0.833328 7.66659 0.833328C7.93992 0.833328 8.16659 1.05999 8.16659 1.33333C8.16659 1.60666 7.93992 1.83333 7.66659 1.83333C4.44659 1.83333 1.83325 4.45333 1.83325 7.66666C1.83325 10.88 4.44659 13.5 7.66659 13.5C10.8866 13.5 13.4999 10.88 13.4999 7.66666C13.4999 7.39333 13.7266 7.16666 13.9999 7.16666C14.2733 7.16666 14.4999 7.39333 14.4999 7.66666C14.4999 11.4333 11.4333 14.5 7.66659 14.5Z"
+                                        fill="#111827" />
+                                    <path
+                                        d="M14.6666 15.1667C14.54 15.1667 14.4133 15.12 14.3133 15.02L12.98 13.6867C12.7866 13.4933 12.7866 13.1733 12.98 12.98C13.1733 12.7867 13.4933 12.7867 13.6866 12.98L15.02 14.3133C15.2133 14.5067 15.2133 14.8267 15.02 15.02C14.92 15.12 14.7933 15.1667 14.6666 15.1667Z"
+                                        fill="#111827" />
+                                </svg>
+
+                            </searchy-icon>
+                            <p class="mx-2 d-inline-block mb-0">UI/UX Designer</p>
+                        </div>
+
+                        <button class="btn bg-transparent rounded-circle border-0 p-0">
+                            <arrow-go-icon>
+                                <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M10.9999 20.8542C5.56409 20.8542 1.14575 16.4358 1.14575 11C1.14575 5.56416 5.56409 1.14583 10.9999 1.14583C16.4358 1.14583 20.8541 5.56416 20.8541 11C20.8541 16.4358 16.4358 20.8542 10.9999 20.8542ZM10.9999 2.52083C6.32492 2.52083 2.52075 6.32499 2.52075 11C2.52075 15.675 6.32492 19.4792 10.9999 19.4792C15.6749 19.4792 19.4791 15.675 19.4791 11C19.4791 6.32499 15.6749 2.52083 10.9999 2.52083Z"
+                                        fill="#3366FF" />
+                                    <path
+                                        d="M13.2917 11.6875H7.79175C7.41591 11.6875 7.10425 11.3758 7.10425 11C7.10425 10.6242 7.41591 10.3125 7.79175 10.3125H13.2917C13.6676 10.3125 13.9792 10.6242 13.9792 11C13.9792 11.3758 13.6676 11.6875 13.2917 11.6875Z"
+                                        fill="#3366FF" />
+                                    <path
+                                        d="M11.4584 14.4375C11.2842 14.4375 11.1101 14.3733 10.9726 14.2358C10.7067 13.97 10.7067 13.53 10.9726 13.2642L13.2367 11L10.9726 8.73583C10.7067 8.47 10.7067 8.03 10.9726 7.76416C11.2384 7.49833 11.6784 7.49833 11.9442 7.76416L14.6942 10.5142C14.9601 10.78 14.9601 11.22 14.6942 11.4858L11.9442 14.2358C11.8067 14.3733 11.6326 14.4375 11.4584 14.4375Z"
+                                        fill="#3366FF" />
+                                </svg>
+                            </arrow-go-icon>
+                        </button>
+                    </popular-item>
+
+                </popular-search-list>
+            </popular-search-section>
+
+        </page-empty-searchbox>
+
+        <section class="mt-3 d-none">
+
+            <filters class="d-flex gap-2 d-block px-3 overflow-scroll">
+                <button class="btn btn-outline-light p-1 border-0 rounded-circle" style="aspect-ratio: 1/1;width: 34px;"
+                    data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">
+                    <filter-icon>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M22 7.25H16C15.59 7.25 15.25 6.91 15.25 6.5C15.25 6.09 15.59 5.75 16 5.75H22C22.41 5.75 22.75 6.09 22.75 6.5C22.75 6.91 22.41 7.25 22 7.25Z"
+                                fill="#111827" />
+                            <path
+                                d="M6 7.25H2C1.59 7.25 1.25 6.91 1.25 6.5C1.25 6.09 1.59 5.75 2 5.75H6C6.41 5.75 6.75 6.09 6.75 6.5C6.75 6.91 6.41 7.25 6 7.25Z"
+                                fill="#111827" />
+                            <path
+                                d="M10 10.75C7.66 10.75 5.75 8.84 5.75 6.5C5.75 4.16 7.66 2.25 10 2.25C12.34 2.25 14.25 4.16 14.25 6.5C14.25 8.84 12.34 10.75 10 10.75ZM10 3.75C8.48 3.75 7.25 4.98 7.25 6.5C7.25 8.02 8.48 9.25 10 9.25C11.52 9.25 12.75 8.02 12.75 6.5C12.75 4.98 11.52 3.75 10 3.75Z"
+                                fill="#111827" />
+                            <path
+                                d="M22 18.25H18C17.59 18.25 17.25 17.91 17.25 17.5C17.25 17.09 17.59 16.75 18 16.75H22C22.41 16.75 22.75 17.09 22.75 17.5C22.75 17.91 22.41 18.25 22 18.25Z"
+                                fill="#111827" />
+                            <path
+                                d="M8 18.25H2C1.59 18.25 1.25 17.91 1.25 17.5C1.25 17.09 1.59 16.75 2 16.75H8C8.41 16.75 8.75 17.09 8.75 17.5C8.75 17.91 8.41 18.25 8 18.25Z"
+                                fill="#111827" />
+                            <path
+                                d="M14 21.75C11.66 21.75 9.75 19.84 9.75 17.5C9.75 15.16 11.66 13.25 14 13.25C16.34 13.25 18.25 15.16 18.25 17.5C18.25 19.84 16.34 21.75 14 21.75ZM14 14.75C12.48 14.75 11.25 15.98 11.25 17.5C11.25 19.02 12.48 20.25 14 20.25C15.52 20.25 16.75 19.02 16.75 17.5C16.75 15.98 15.52 14.75 14 14.75Z"
+                                fill="#111827" />
+                        </svg>
+                    </filter-icon>
+                </button>
+
+                <select class="btn btn-sm rounded-pill px-2" name="job_state"
+                    style="background-color: #091a7a; color: white;">
+                    <option value="Any">Work from</option>
+                    <option value="Remote">Remote</option>
+                    <option value="From Office">From Office</option>
+                </select>
+                <select class="btn btn-sm rounded-pill px-2" name="job_time_type"
+                    style="background-color: #091a7a; color: white;">
+                    <option value="Any">Job Time</option>
+                    <option value="Full time">Full time</option>
+                    <option value="Part time">Part time</option>
+                </select>
+                <select class="btn btn-sm border-1 border-secondary border-opacity-50 rounded-pill px-2" name="salary">
+                    <option value="Any">Salary</option>
+                    <option value="5k-10k">$5K - $10K</option>
+                    <option value="10k-15k">$10K - $15K</option>
+                    <option value="15k-20k">$15K - $20K</option>
+                    <option value="20k-30k">$20K - $30K</option>
+                    <option value="30k-50k">$30K - $50K</option>
+                </select>
+                <select class="btn btn-sm border-1 border-secondary border-opacity-50 rounded-pill px-2"
+                    name="location">
+                    <option value="Any">Location</option>
+                    <option value="Cairo, Egypt">Cairo, Egypt</option>
+                    <option value="Newyork, USA">Newyork, USA</option>
+                </select>
+                <select class="btn btn-sm border-1 border-secondary border-opacity-50 rounded-pill px-2"
+                    name="created_at">
+                    <option value="Any"> Post date</option>
+                    <option value="1"> last 24h</option>
+                    <option value="7"> a week ago</option>
+                    <option value="30">a month ago</option>
+                    <option value="90">3 months ago</option>
+                    <option value="365">a year ago</option>
+                </select>
+
+            </filters>
+
+            <page-no-results>
+                <div class="text-center d-grid" style="height: calc(100vh - 140px); place-content: center;">
+
+                    <search-icon>
+                        <svg width="173" height="142" viewBox="0 0 173 142" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="89" cy="76" r="66" fill="#F0F5FF" />
+                            <circle cx="89" cy="76" r="50" fill="#E0EBFF" />
+                            <path
+                                d="M86.5 97.875C73.05 97.875 62.125 86.95 62.125 73.5C62.125 60.05 73.05 49.125 86.5 49.125C99.95 49.125 110.875 60.05 110.875 73.5C110.875 86.95 99.95 97.875 86.5 97.875ZM86.5 52.875C75.125 52.875 65.875 62.125 65.875 73.5C65.875 84.875 75.125 94.125 86.5 94.125C97.875 94.125 107.125 84.875 107.125 73.5C107.125 62.125 97.875 52.875 86.5 52.875Z"
+                                fill="#3366FF" />
+                            <path
+                                d="M92.75 75.375H80.25C79.225 75.375 78.375 74.525 78.375 73.5C78.375 72.475 79.225 71.625 80.25 71.625H92.75C93.775 71.625 94.625 72.475 94.625 73.5C94.625 74.525 93.775 75.375 92.75 75.375Z"
+                                fill="#091A7A" />
+                            <path
+                                d="M109.4 102.975C109.2 102.975 109 102.95 108.825 102.925C107.65 102.775 105.525 101.975 104.325 98.4C103.7 96.525 103.925 94.65 104.95 93.225C105.975 91.8 107.7 91 109.675 91C112.225 91 114.225 91.975 115.125 93.7C116.025 95.425 115.775 97.625 114.35 99.75C112.575 102.425 110.65 102.975 109.4 102.975ZM107.9 97.225C108.325 98.525 108.925 99.175 109.325 99.225C109.725 99.275 110.475 98.8 111.25 97.675C111.975 96.6 112.025 95.825 111.85 95.475C111.675 95.125 110.975 94.75 109.675 94.75C108.9 94.75 108.325 95 108 95.425C107.7 95.85 107.65 96.5 107.9 97.225Z"
+                                fill="#3366FF" />
+                            <circle cx="164" cy="114" r="9" fill="#D6E4FF" />
+                            <circle cx="7" cy="70" r="7" fill="#D6E4FF" />
+                            <circle cx="141" cy="5" r="5" fill="#D6E4FF" />
+                        </svg>
+
+                    </search-icon>
+
+                    <br>
+                    <br>
+
+                    <h3>No results</h3>
+                    <small class="text-secondary mx-4">Try searching with different keywords so we can show you</small>
+                </div>
+            </page-no-results>
+
+            <page-search-results class="d-none">
+
+                <filtered-jobs-section>
+
+                    <div class="bg-light p-2 px-4">
+                        <h6 class="text-secondary fw-normal mb-0">Featuring 120+ jobs</h6>
+                    </div>
+                    <br>
+
+                    <filtered-jobs-list class="d-block container">
+                        <template id="job_template">
+                            <job-item>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <basic-job-info class="d-flex ">
+                                        <twitter-icon class="me-4 d-inline-block">
+                                            <svg width="40" height="41" viewBox="0 0 40 41" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <rect y="0.5" width="40" height="40" rx="8" fill="#6690FF" />
+                                                <path
+                                                    d="M15.7887 33C12.5537 33 9.53817 32.0591 7 30.4356C9.15499 30.5751 12.9581 30.2411 15.3236 27.9848C11.7651 27.8215 10.1603 25.0923 9.95094 23.926C10.2533 24.0426 11.6953 24.1826 12.5093 23.856C8.4159 22.8296 7.78793 19.2373 7.92748 18.141C8.695 18.6775 9.99745 18.8641 10.5091 18.8174C6.69479 16.0882 8.06703 11.9828 8.74151 11.0963C11.4788 14.8887 15.5812 17.0186 20.6564 17.137C20.5607 16.7174 20.5102 16.2804 20.5102 15.8316C20.5102 12.6109 23.1134 10 26.3247 10C28.0025 10 29.5144 10.7128 30.5757 11.8528C31.6969 11.5901 33.3843 10.9751 34.2092 10.4432C33.7934 11.9361 32.4989 13.1815 31.7159 13.6431C31.7224 13.6588 31.7095 13.6273 31.7159 13.6431C32.4037 13.539 34.2648 13.1814 35 12.6826C34.6364 13.5213 33.264 14.9157 32.1377 15.6964C32.3473 24.9381 25.2765 33 15.7887 33Z"
+                                                    fill="white" />
+                                            </svg>
+
+                                        </twitter-icon>
+
+                                        <span class="vstack d-inline-block mb-2">
+                                            <h4 class="mb-1">Senior UI Designer</h4>
+                                            <small>Twitter • Jakarta, Indonesia </small>
+                                            </sp>
+                                    </basic-job-info>
+
+                                    <input type="checkbox" name="saved" id="saved_btn_id" class="d-none">
+                                    <!-- TODO make this button changing when clicked -->
+                                    <label for="saved_btn_id" class="btn btn-outline-light bg-transparent"
+                                        role="button">
+                                        <save-icon>
+                                            <svg width="24" height="25" viewBox="0 0 24 25" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M16.8201 2.5H7.18007C5.05007 2.5 3.32007 4.24 3.32007 6.36V20.45C3.32007 22.25 4.61007 23.01 6.19007 22.14L11.0701 19.43C11.5901 19.14 12.4301 19.14 12.9401 19.43L17.8201 22.14C19.4001 23.02 20.6901 22.26 20.6901 20.45V6.36C20.6801 4.24 18.9501 2.5 16.8201 2.5ZM14.5001 11.9H9.50007C9.09007 11.9 8.75007 11.56 8.75007 11.15C8.75007 10.74 9.09007 10.4 9.50007 10.4H14.5001C14.9101 10.4 15.2501 10.74 15.2501 11.15C15.2501 11.56 14.9101 11.9 14.5001 11.9Z"
+                                                    fill="#3366FF" />
+                                            </svg>
+                                        </save-icon>
+                                    </label>
+                                </div>
+
+
+                                <div class="d-flex justify-content-between align-items-end">
+                                    <tags class="d-flex flex-wrap gap-2">
+                                        <button
+                                            class="btn rounded-pill btn-outline-primary border-0 bg-primary bg-opacity-25">Fulltime</button>
+                                        <button
+                                            class="btn rounded-pill btn-outline-primary border-0 bg-primary bg-opacity-25">Remote</button>
+                                        <button
+                                            class="btn rounded-pill btn-outline-primary border-0 bg-primary bg-opacity-25">Senior</button>
+                                    </tags>
+
+                                    <span class="text-success fw-semibold">$15K<small
+                                            class="text-secondary fw-normal">/Month</small></span>
+                                </div>
+                                <hr class="border-dark border-opacity-25 mx-2">
+                            </job-item>
+                        </template>
+                    </filtered-jobs-list>
+                </filtered-jobs-section>
+            </page-search-results>
+        </section>
+
+    </main>
+
+
+    <offcanvas class="offcanvas h-auto offcanvas-bottom rounded-top" tabindex="-1" id="offcanvasBottom"
+        aria-labelledby="offcanvasBottomLabel">
+        <form>
+            <div class="offcanvas-header d-flex justify-content-between">
+                <button class="btn bg-transparent rounded-pill" data-bs-dismiss="offcanvas" aria-label="Close">
+                    <back-icon>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M9.56994 18.82C9.37994 18.82 9.18994 18.75 9.03994 18.6L2.96994 12.53C2.67994 12.24 2.67994 11.76 2.96994 11.47L9.03994 5.4C9.32994 5.11 9.80994 5.11 10.0999 5.4C10.3899 5.69 10.3899 6.17 10.0999 6.46L4.55994 12L10.0999 17.54C10.3899 17.83 10.3899 18.31 10.0999 18.6C9.95994 18.75 9.75994 18.82 9.56994 18.82Z"
+                                fill="#292D32" />
+                            <path
+                                d="M20.4999 12.75H3.66992C3.25992 12.75 2.91992 12.41 2.91992 12C2.91992 11.59 3.25992 11.25 3.66992 11.25H20.4999C20.9099 11.25 21.2499 11.59 21.2499 12C21.2499 12.41 20.9099 12.75 20.4999 12.75Z"
+                                fill="#292D32" />
+                        </svg>
+                    </back-icon>
+                </button>
+
+                <h5 class="offcanvas-title" id="offcanvasBottomLabel">Set Filter</h5>
+                <button type="reset"
+                    class="text-decoration-none btn btn-outline-light border-0 text-primary">Reset</button>
+            </div>
+            <div class="offcanvas-body">
+                <label for="job_title" class="h6">Job Title</label>
+                <input type="text" name="job_title" id="job_title" class="form-control" placeholder="UI/UX Designer">
+                <br>
+
+                <label for="location" class="h6">Location</label>
+                <input type="text" name="location" id="location" class="form-control" placeholder="City, Country">
+                <br>
+
+                <label for="salary" class="h6">Salary</label>
+                <select name="salary" id="salary" class="form-select form-control">
+                    <option value="5k-10k">$5K - $10K</option>
+                    <option value="10k-15k">$10K - $15K</option>
+                    <option value="15k-20k">$15K - $20K</option>
+                    <option value="20k-30k">$20K - $30K</option>
+                    <option value="30k-50k">$30K - $50K</option>
+                </select>
+                <br>
+
+
+                <h6>Job Type</h6>
+
+
+                <input class="d-none" type="checkbox" value="Full time" name="job_type" id="job_type_1">
+                <label for="job_type_1" class="me-2 mb-2 btn rounded-pill">Full
+                    time</label>
+
+                <input class="d-none" type="checkbox" value="Remote" name="job_type" id="job_type_2">
+                <label for="job_type_2" class="me-2 mb-2 btn rounded-pill">Remote</label>
+
+
+                <input class="d-none" type="checkbox" value="Contract" name="job_type" id="job_type_3">
+                <label for="job_type_3" class="me-2 mb-2 btn rounded-pill">Contract</label>
+
+                <input class="d-none" type="checkbox" value="Part time" name="job_type" id="job_type_4">
+                <label for="job_type_4" class="me-2 mb-2 btn rounded-pill">Part
+                    time</label>
+
+                <input class="d-none" type="checkbox" value="Onsite" name="job_type" id="job_type_5">
+                <label for="job_type_5" class="me-2 mb-2 btn rounded-pill">Onsite</label>
+
+                <input class="d-none" type="checkbox" value="Internship" name="job_type" id="job_type_6">
+                <label for="job_type_6" class="me-2 mb-2 btn rounded-pill">Internship</label>
+
+
+                <br><br>
+                <br><br>
+
+                <button class="btn btn-primary rounded-pill w-100" id="form_submit_btn" type="submit">Show
+                    result</button>
+                <br>
+                <br>
+            </div>
+        </form>
+    </offcanvas>
+</body>
+
+</html>

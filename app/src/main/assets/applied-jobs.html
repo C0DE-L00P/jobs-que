@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applied Jobs</title>
+
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script defer src="./assets/js/applied-jobs.js"></script>
+
+    <style>
+        button.nav-link.active {
+            background-color: #02337A !important;
+            color: white !important;
+        }
+    </style>
+</head>
+
+<body>
+    <upper-part class="text-center">
+        <br>
+        <div class="d-flex justify-content-between align-items-center">
+
+            <a href="javascript:parent.window.document.getElementById('homescreen_a').click()"
+                class="btn bg-transparent rounded-pill">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M9.56994 18.82C9.37994 18.82 9.18994 18.75 9.03994 18.6L2.96994 12.53C2.67994 12.24 2.67994 11.76 2.96994 11.47L9.03994 5.4C9.32994 5.11 9.80994 5.11 10.0999 5.4C10.3899 5.69 10.3899 6.17 10.0999 6.46L4.55994 12L10.0999 17.54C10.3899 17.83 10.3899 18.31 10.0999 18.6C9.95994 18.75 9.75994 18.82 9.56994 18.82Z"
+                        fill="#292D32" />
+                    <path
+                        d="M20.4999 12.75H3.66992C3.25992 12.75 2.91992 12.41 2.91992 12C2.91992 11.59 3.25992 11.25 3.66992 11.25H20.4999C20.9099 11.25 21.2499 11.59 21.2499 12C21.2499 12.41 20.9099 12.75 20.4999 12.75Z"
+                        fill="#292D32" />
+                </svg>
+            </a>
+
+            <h5 class="fw-semibold me-4">Applied Jobs</h5>
+            <i class="opacity-0">---</i>
+        </div>
+        <br>
+    </upper-part>
+
+    <tabs role="tablist" class="nav nav-tabs nav-fill bg-light overflow-hidden rounded-pill p-1 container" id="nav-tab">
+
+        <button class="nav-link active rounded-pill" id="nav-active-tab" data-bs-toggle="tab"
+            data-bs-target="#nav-active" type="button" role="tab" aria-controls="nav-active"
+            aria-selected="true">Active</button>
+
+        <button class="nav-link rounded-pill" id="nav-rejected-tab" data-bs-toggle="tab" data-bs-target="#nav-rejected"
+            type="button" role="tab" aria-controls="nav-rejected" aria-selected="false">Rejected</button>
+
+    </tabs>
+
+
+    <tabbed-pages class="d-block mt-2">
+
+        <active-tab class="tab-content" id="nav-tabContent" role="tabpanel">
+            <div class="tab-pane fade show active" id="nav-active" aria-labelledby="nav-active-tab">
+                <active-list class="py-2 px-0">
+
+                    <small class="d-block w-100 py-2 bg-light px-4 fw-semibold text-secondary"
+                        id="active_applied_count">3
+                        Jobs</small>
+
+                    <template>
+                        <active-item class="notification-item pt-3 d-block container" role="button"
+                            data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom"
+                            aria-controls="offcanvasBottom">
+                            <div class="d-flex align-items-center gap-2">
+
+                                <discord-icon>
+                                    <svg width="40" height="41" viewBox="0 0 40 41" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <rect y="0.5" width="40" height="40" rx="8" fill="#5865F2" />
+                                        <path
+                                            d="M6 16.6C6 13.2397 6 11.5595 6.65396 10.2761C7.2292 9.14708 8.14708 8.2292 9.27606 7.65396C10.5595 7 12.2397 7 15.6 7H24.4C27.7603 7 29.4405 7 30.7239 7.65396C31.8529 8.2292 32.7708 9.14708 33.346 10.2761C34 11.5595 34 13.2397 34 16.6V25.4C34 28.7603 34 30.4405 33.346 31.7239C32.7708 32.8529 31.8529 33.7708 30.7239 34.346C29.4405 35 27.7603 35 24.4 35H15.6C12.2397 35 10.5595 35 9.27606 34.346C8.14708 33.7708 7.2292 32.8529 6.65396 31.7239C6 30.4405 6 28.7603 6 25.4V16.6Z"
+                                            fill="#5865F2" />
+                                        <path
+                                            d="M27.6361 14.34C26.212 13.714 24.6892 13.259 23.0973 13C22.9018 13.3321 22.6734 13.7787 22.5159 14.1341C20.8236 13.895 19.1469 13.895 17.4857 14.1341C17.3283 13.7787 17.0946 13.3321 16.8974 13C15.3037 13.259 13.7793 13.7157 12.3552 14.3433C9.48276 18.4213 8.70409 22.3981 9.09342 26.3184C10.9986 27.6551 12.8449 28.467 14.66 28.9983C15.1082 28.4189 15.5079 27.8029 15.8523 27.1536C15.1964 26.9195 14.5683 26.6306 13.9748 26.2951C14.1323 26.1856 14.2863 26.071 14.4351 25.9531C18.0551 27.5438 21.9881 27.5438 25.5649 25.9531C25.7154 26.071 25.8694 26.1856 26.0251 26.2951C25.4299 26.6322 24.8 26.9211 24.1442 27.1553C24.4885 27.8029 24.8865 28.4205 25.3364 29C27.1533 28.4687 29.0013 27.6567 30.9065 26.3184C31.3633 21.7738 30.1261 17.8335 27.6361 14.34ZM16.3454 23.9075C15.2587 23.9075 14.3676 22.9543 14.3676 21.7937C14.3676 20.6331 15.2397 19.6783 16.3454 19.6783C17.4511 19.6783 18.3422 20.6314 18.3232 21.7937C18.325 22.9543 17.4511 23.9075 16.3454 23.9075ZM23.6545 23.9075C22.5678 23.9075 21.6767 22.9543 21.6767 21.7937C21.6767 20.6331 22.5488 19.6783 23.6545 19.6783C24.7602 19.6783 25.6514 20.6314 25.6323 21.7937C25.6323 22.9543 24.7602 23.9075 23.6545 23.9075Z"
+                                            fill="white" />
+                                    </svg>
+                                </discord-icon>
+
+                                <div class="flex-grow-1 text-start">
+                                    <h6 class="mb-0">UI Designer</h6>
+                                    <small style="font-size: 11px;">Spectrum • Jakarta, Indonesia </small>
+                                </div>
+
+                                <button class=" me-2 btn btn-outline-light border-0">
+                                    <save-icon>
+                                        <svg width="24" height="25" viewBox="0 0 24 25" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M14.5 11.8999H9.5C9.09 11.8999 8.75 11.5599 8.75 11.1499C8.75 10.7399 9.09 10.3999 9.5 10.3999H14.5C14.91 10.3999 15.25 10.7399 15.25 11.1499C15.25 11.5599 14.91 11.8999 14.5 11.8999Z"
+                                                fill="#111827" />
+                                            <path
+                                                d="M4.93006 23.25C4.51006 23.25 4.12006 23.15 3.77006 22.95C3.00006 22.5 2.56006 21.59 2.56006 20.46V6.36C2.56006 3.82 4.63006 1.75 7.17006 1.75H16.8201C19.3601 1.75 21.4301 3.82 21.4301 6.36V20.45C21.4301 21.58 20.9901 22.49 20.2201 22.94C19.4501 23.39 18.4401 23.34 17.4501 22.79L12.5701 20.08C12.2801 19.92 11.7101 19.92 11.4201 20.08L6.54006 22.79C6.00006 23.09 5.45006 23.25 4.93006 23.25ZM7.18006 3.25C5.47006 3.25 4.07006 4.65 4.07006 6.36V20.45C4.07006 21.04 4.24006 21.48 4.54006 21.65C4.84006 21.83 5.31006 21.77 5.82006 21.48L10.7001 18.77C11.4401 18.36 12.5601 18.36 13.3001 18.77L18.1801 21.48C18.6901 21.77 19.1601 21.83 19.4601 21.65C19.7601 21.47 19.9301 21.03 19.9301 20.45V6.36C19.9301 4.65 18.5301 3.25 16.8201 3.25H7.18006Z"
+                                                fill="#111827" />
+                                        </svg>
+
+                                    </save-icon>
+                                </button>
+
+                            </div>
+                            <div class=" my-2 d-flex justify-content-between align-items-center"
+                                style="font-size: 11px;">
+                                <tags class="mt-2">
+                                    <span
+                                        class="bg-primary bg-opacity-10 text-primary rounded-pill p-1 px-3">Fulltime</span>
+                                    <span
+                                        class="bg-primary bg-opacity-10 text-primary rounded-pill p-1 px-3">Remote</span>
+                                </tags>
+                                <span>Posted 2 days ago</span>
+                            </div>
+
+                            <steps
+                                class="d-flex justify-content-evenly gap-2 align-items-baseline container rounded-3 py-2 mt-3"
+                                style="border: 1px solid #d1d5db;" role="tablist" id="nav-tab">
+                                <button class="nav-link rounded-2 p-1 bg-transparent border-0" id="nav-biodata-tab"
+                                    data-bs-toggle="tab" data-bs-target="#nav-biodata" type="button" role="tab"
+                                    aria-controls="nav-biodata" aria-selected="true">
+                                    <span id="step_1_indicator"
+                                        class="mx-auto step-done rounded-circle bg-primary text-white fw-semibold text-center d-grid"
+                                        style="place-items:center; border: 1px solid var(--bs-primary); width: 32px; aspect-ratio: 1/1; line-height: 18px;">1</span>
+
+                                    <check-icon class="d-none">
+                                        <svg width="45" height="44" viewBox="0 0 45 44" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M22.5 0C10.378 0 0.5 9.878 0.5 22C0.5 34.122 10.378 44 22.5 44C34.622 44 44.5 34.122 44.5 22C44.5 9.878 34.622 0 22.5 0ZM33.016 16.94L20.542 29.414C20.234 29.722 19.816 29.898 19.376 29.898C18.936 29.898 18.518 29.722 18.21 29.414L11.984 23.188C11.346 22.55 11.346 21.494 11.984 20.856C12.622 20.218 13.678 20.218 14.316 20.856L19.376 25.916L30.684 14.608C31.322 13.97 32.378 13.97 33.016 14.608C33.654 15.246 33.654 16.28 33.016 16.94Z"
+                                                fill="#387FFB" />
+                                        </svg>
+                                    </check-icon>
+
+                                    <small class="d-block text-center text-primary mt-1"
+                                        style="font-size: x-small;">Biodata</small>
+                                </button>
+
+                                <hr
+                                    style="border: none; border-bottom: 1px dashed var(--bs-secondary); min-width: 24px;">
+
+                                <button disabled class="nav-link rounded-2 p-1 bg-transparent border-0"
+                                    id="nav-type-of-work-tab" data-bs-toggle="tab" data-bs-target="#nav-type-of-work"
+                                    type="button" role="tab" aria-controls="nav-type-of-work" aria-selected="true">
+                                    <span id="step_2_indicator"
+                                        class="mx-auto d-block rounded-circle text-secondary fw-semibold text-center d-grid"
+                                        style="border: 1px solid var(--bs-secondary); width: 32px; aspect-ratio: 1/1;place-items:center; line-height: 24px;">2</span>
+
+                                    <check-icon class="d-none">
+                                        <svg width="45" height="44" viewBox="0 0 45 44" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M22.5 0C10.378 0 0.5 9.878 0.5 22C0.5 34.122 10.378 44 22.5 44C34.622 44 44.5 34.122 44.5 22C44.5 9.878 34.622 0 22.5 0ZM33.016 16.94L20.542 29.414C20.234 29.722 19.816 29.898 19.376 29.898C18.936 29.898 18.518 29.722 18.21 29.414L11.984 23.188C11.346 22.55 11.346 21.494 11.984 20.856C12.622 20.218 13.678 20.218 14.316 20.856L19.376 25.916L30.684 14.608C31.322 13.97 32.378 13.97 33.016 14.608C33.654 15.246 33.654 16.28 33.016 16.94Z"
+                                                fill="#387FFB" />
+                                        </svg>
+                                    </check-icon>
+
+                                    <small class="d-block text-center text-secondary mt-1"
+                                        style="font-size: x-small;">Type
+                                        of work</small>
+                                </button>
+                                <hr
+                                    style="border: none;border-bottom: 1px dashed var(--bs-secondary); min-width: 24px;">
+
+                                <button disabled class="nav-link rounded-2 p-1 bg-transparent border-0"
+                                    id="nav-upload-portfolio-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-upload-portfolio" type="button" role="tab"
+                                    aria-controls="nav-upload-portfolio" aria-selected="true">
+                                    <span id="step_3_indicator"
+                                        class="mx-auto d-block rounded-circle text-secondary fw-semibold text-center d-grid"
+                                        style="border: 1px solid var(--bs-secondary); width: 32px; aspect-ratio: 1/1; line-height: 25px;">3</span>
+
+                                    <check-icon class="d-none">
+                                        <svg width="45" height="44" viewBox="0 0 45 44" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M22.5 0C10.378 0 0.5 9.878 0.5 22C0.5 34.122 10.378 44 22.5 44C34.622 44 44.5 34.122 44.5 22C44.5 9.878 34.622 0 22.5 0ZM33.016 16.94L20.542 29.414C20.234 29.722 19.816 29.898 19.376 29.898C18.936 29.898 18.518 29.722 18.21 29.414L11.984 23.188C11.346 22.55 11.346 21.494 11.984 20.856C12.622 20.218 13.678 20.218 14.316 20.856L19.376 25.916L30.684 14.608C31.322 13.97 32.378 13.97 33.016 14.608C33.654 15.246 33.654 16.28 33.016 16.94Z"
+                                                fill="#387FFB" />
+                                        </svg>
+                                    </check-icon>
+
+                                    <small class="d-block text-center text-secondary mt-1"
+                                        style="font-size: x-small;">Upload
+                                        portfolio</small>
+                                </button>
+                            </steps>
+
+                            <hr class="mb-0 border-secondary border-opacity-25" />
+                        </active-item>
+                    </template>
+
+
+                    <br><br>
+                </active-list>
+
+                <empty-active-page class=" text-center flex-column justify-content-center align-items-center"
+                    style="min-height: 50vh; display: flex;">
+                    <svg width="173" height="142" viewBox="0 0 173 142" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="89" cy="76" r="66" fill="#F0F5FF" />
+                        <circle cx="89" cy="76" r="50" fill="#E0EBFF" />
+                        <path
+                            d="M94.0002 88.2751C93.5252 88.2751 93.0502 88.1001 92.6752 87.7251L82.7752 77.8251C82.0502 77.1001 82.0502 75.9001 82.7752 75.1751C83.5002 74.4501 84.7002 74.4501 85.4252 75.1751L95.3252 85.0751C96.0502 85.8001 96.0502 87.0001 95.3252 87.7251C94.9502 88.0751 94.4752 88.2751 94.0002 88.2751Z"
+                            fill="#3366FF" />
+                        <path
+                            d="M83.9996 88.375C83.5246 88.375 83.0496 88.2 82.6746 87.825C81.9496 87.1 81.9496 85.9 82.6746 85.175L92.5746 75.275C93.2996 74.55 94.4996 74.55 95.2246 75.275C95.9496 76 95.9496 77.2 95.2246 77.925L85.3246 87.825C84.9496 88.2 84.4746 88.375 83.9996 88.375Z"
+                            fill="#091A7A" />
+                        <path
+                            d="M94 62.875H84C81.6 62.875 77.125 62.875 77.125 56C77.125 49.125 81.6 49.125 84 49.125H94C96.4 49.125 100.875 49.125 100.875 56C100.875 58.4 100.875 62.875 94 62.875ZM84 52.875C81.525 52.875 80.875 52.875 80.875 56C80.875 59.125 81.525 59.125 84 59.125H94C97.125 59.125 97.125 58.475 97.125 56C97.125 52.875 96.475 52.875 94 52.875H84Z"
+                            fill="#3366FF" />
+                        <path
+                            d="M96.5 102.875H81.5C67.45 102.875 64.625 96.4251 64.625 86.0001V71.0001C64.625 59.6001 68.75 54.7251 78.9 54.2001C79.95 54.1501 80.825 54.9251 80.875 55.9751C80.925 57.0251 80.125 57.8751 79.1 57.9251C72 58.3251 68.375 60.4501 68.375 71.0001V86.0001C68.375 95.2501 70.2 99.1251 81.5 99.1251H96.5C107.8 99.1251 109.625 95.2501 109.625 86.0001V71.0001C109.625 60.4501 106 58.3251 98.9 57.9251C97.875 57.8751 97.075 56.9751 97.125 55.9501C97.175 54.9251 98.075 54.1251 99.1 54.1751C109.25 54.7251 113.375 59.6001 113.375 70.9751V85.9751C113.375 96.4251 110.55 102.875 96.5 102.875Z"
+                            fill="#292D32" />
+                        <circle cx="164" cy="114" r="9" fill="#D6E4FF" />
+                        <circle cx="7" cy="70" r="7" fill="#D6E4FF" />
+                        <circle cx="141" cy="5" r="5" fill="#D6E4FF" />
+                    </svg>
+
+                    <br>
+
+                    <h3>Nothing gets submitted yet</h3>
+                </empty-active-page>
+            </div>
+
+        </active-tab>
+
+        <rejected-tab class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade p-3" id="nav-rejected" role="tabpanel" aria-labelledby="nav-rejected-tab">
+
+                <empty-rejected-page class=" text-center flex-column justify-content-center align-items-center"
+                    style="min-height: 50vh; display: flex;">
+                    <svg width="173" height="142" viewBox="0 0 173 142" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="89" cy="76" r="66" fill="#F0F5FF" />
+                        <circle cx="89" cy="76" r="50" fill="#E0EBFF" />
+                        <path
+                            d="M94.0002 88.2751C93.5252 88.2751 93.0502 88.1001 92.6752 87.7251L82.7752 77.8251C82.0502 77.1001 82.0502 75.9001 82.7752 75.1751C83.5002 74.4501 84.7002 74.4501 85.4252 75.1751L95.3252 85.0751C96.0502 85.8001 96.0502 87.0001 95.3252 87.7251C94.9502 88.0751 94.4752 88.2751 94.0002 88.2751Z"
+                            fill="#3366FF" />
+                        <path
+                            d="M83.9996 88.375C83.5246 88.375 83.0496 88.2 82.6746 87.825C81.9496 87.1 81.9496 85.9 82.6746 85.175L92.5746 75.275C93.2996 74.55 94.4996 74.55 95.2246 75.275C95.9496 76 95.9496 77.2 95.2246 77.925L85.3246 87.825C84.9496 88.2 84.4746 88.375 83.9996 88.375Z"
+                            fill="#091A7A" />
+                        <path
+                            d="M94 62.875H84C81.6 62.875 77.125 62.875 77.125 56C77.125 49.125 81.6 49.125 84 49.125H94C96.4 49.125 100.875 49.125 100.875 56C100.875 58.4 100.875 62.875 94 62.875ZM84 52.875C81.525 52.875 80.875 52.875 80.875 56C80.875 59.125 81.525 59.125 84 59.125H94C97.125 59.125 97.125 58.475 97.125 56C97.125 52.875 96.475 52.875 94 52.875H84Z"
+                            fill="#3366FF" />
+                        <path
+                            d="M96.5 102.875H81.5C67.45 102.875 64.625 96.4251 64.625 86.0001V71.0001C64.625 59.6001 68.75 54.7251 78.9 54.2001C79.95 54.1501 80.825 54.9251 80.875 55.9751C80.925 57.0251 80.125 57.8751 79.1 57.9251C72 58.3251 68.375 60.4501 68.375 71.0001V86.0001C68.375 95.2501 70.2 99.1251 81.5 99.1251H96.5C107.8 99.1251 109.625 95.2501 109.625 86.0001V71.0001C109.625 60.4501 106 58.3251 98.9 57.9251C97.875 57.8751 97.075 56.9751 97.125 55.9501C97.175 54.9251 98.075 54.1251 99.1 54.1751C109.25 54.7251 113.375 59.6001 113.375 70.9751V85.9751C113.375 96.4251 110.55 102.875 96.5 102.875Z"
+                            fill="#292D32" />
+                        <circle cx="164" cy="114" r="9" fill="#D6E4FF" />
+                        <circle cx="7" cy="70" r="7" fill="#D6E4FF" />
+                        <circle cx="141" cy="5" r="5" fill="#D6E4FF" />
+                    </svg>
+
+                    <br>
+
+                    <h3>No applications were rejected</h3>
+                </empty-rejected-page>
+
+                <reject-list class=" py-2 px-0" style="display: none">
+
+                    <template>
+                    </template>
+
+                    <br><br>
+                </reject-list>
+            </div>
+        </rejected-tab>
+
+        <br>
+    </tabbed-pages>
+</body>
+
+</html>

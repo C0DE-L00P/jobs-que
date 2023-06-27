@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply Job</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        button.nav-link.active {
+            background-color: #02337A !important;
+            color: white !important;
+        }
+        
+        save-unclicked-icon,
+        input[type=checkbox]:is(.save-suggested, .save-recent):checked+label>save-clicked-icon {
+            display: block;
+        }
+
+        save-clicked-icon,
+        input[type=checkbox]:is(.save-suggested, .save-recent):checked+label>save-unclicked-icon {
+            display: none;
+        }
+    </style>
+
+    <script src="./assets/js/handling-favorites.js"></script>
+    <script src="./assets/js/apply-jop.js" defer></script>
+</head>
+
+
+<body>
+    <main class="container">
+        <br>
+        <header class="container d-flex justify-content-between">
+
+
+            <a href="javascript:history.back()" class="btn bg-transparent rounded-pill">
+                <back-icon>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M9.56994 18.82C9.37994 18.82 9.18994 18.75 9.03994 18.6L2.96994 12.53C2.67994 12.24 2.67994 11.76 2.96994 11.47L9.03994 5.4C9.32994 5.11 9.80994 5.11 10.0999 5.4C10.3899 5.69 10.3899 6.17 10.0999 6.46L4.55994 12L10.0999 17.54C10.3899 17.83 10.3899 18.31 10.0999 18.6C9.95994 18.75 9.75994 18.82 9.56994 18.82Z"
+                            fill="#292D32" />
+                        <path
+                            d="M20.4999 12.75H3.66992C3.25992 12.75 2.91992 12.41 2.91992 12C2.91992 11.59 3.25992 11.25 3.66992 11.25H20.4999C20.9099 11.25 21.2499 11.59 21.2499 12C21.2499 12.41 20.9099 12.75 20.4999 12.75Z"
+                            fill="#292D32" />
+                    </svg>
+                </back-icon>
+            </a>
+
+            <h5>Apply Job</h5>
+            <input type="checkbox" name="isFavorite" id="fav_btn_id" onclick="FavUnFav(event)" value="" class="d-none save-suggested" value="job_id">
+            <label for="fav_btn_id" class="btn btn-outline-light border-0 bg-transparent" role="button">
+                <save-unclicked-icon>
+                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M14.5 11.9H9.5C9.09 11.9 8.75 11.56 8.75 11.15C8.75 10.74 9.09 10.4 9.5 10.4H14.5C14.91 10.4 15.25 10.74 15.25 11.15C15.25 11.56 14.91 11.9 14.5 11.9Z"
+                            fill="black" />
+                        <path
+                            d="M4.93006 23.25C4.51006 23.25 4.12006 23.15 3.77006 22.95C3.00006 22.5 2.56006 21.59 2.56006 20.46V6.36C2.56006 3.82 4.63006 1.75 7.17006 1.75H16.8201C19.3601 1.75 21.4301 3.82 21.4301 6.36V20.45C21.4301 21.58 20.9901 22.49 20.2201 22.94C19.4501 23.39 18.4401 23.34 17.4501 22.79L12.5701 20.08C12.2801 19.92 11.7101 19.92 11.4201 20.08L6.54006 22.79C6.00006 23.09 5.45006 23.25 4.93006 23.25ZM7.18006 3.25C5.47006 3.25 4.07006 4.65 4.07006 6.36V20.45C4.07006 21.04 4.24006 21.48 4.54006 21.65C4.84006 21.83 5.31006 21.77 5.82006 21.48L10.7001 18.77C11.4401 18.36 12.5601 18.36 13.3001 18.77L18.1801 21.48C18.6901 21.77 19.1601 21.83 19.4601 21.65C19.7601 21.47 19.9301 21.03 19.9301 20.45V6.36C19.9301 4.65 18.5301 3.25 16.8201 3.25H7.18006Z"
+                            fill="black" />
+                    </svg>
+                </save-unclicked-icon>
+
+                <save-clicked-icon>
+                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M16.8201 2.5H7.18007C5.05007 2.5 3.32007 4.24 3.32007 6.36V20.45C3.32007 22.25 4.61007 23.01 6.19007 22.14L11.0701 19.43C11.5901 19.14 12.4301 19.14 12.9401 19.43L17.8201 22.14C19.4001 23.02 20.6901 22.26 20.6901 20.45V6.36C20.6801 4.24 18.9501 2.5 16.8201 2.5ZM14.5001 11.9H9.50007C9.09007 11.9 8.75007 11.56 8.75007 11.15C8.75007 10.74 9.09007 10.4 9.50007 10.4H14.5001C14.9101 10.4 15.2501 10.74 15.2501 11.15C15.2501 11.56 14.9101 11.9 14.5001 11.9Z"
+                            fill="#3366ff" />
+                    </svg>
+                </save-clicked-icon>
+            </label>
+
+        </header>
+        <br>
+
+        <job-hero class="container text-center d-block mb-1">
+           <img id="job_logo" src="" alt="comp logo" onerror="if (this.src != './assets/images/fallback_job_img.webp') this.src = './assets/images/fallback_job_img.webp';" style="aspect-ratio: 1/1; width: 48px;">
+
+            <h4 class="mt-2 mb-1" id="job_title"></h5>
+                <small class="d-block" id="job_company_location"></small>
+
+                <br>
+                <tags class="d-block" id="job_tags"></tags>
+
+                <br>
+                <tabs role="tablist" class="nav nav-tabs nav-fill bg-light overflow-hidden rounded-pill p-1 container"
+                    id="nav-tab">
+
+                    <button class="nav-link active rounded-pill" id="nav-description-tab" data-bs-toggle="tab"
+                        data-bs-target="#nav-description" type="button" role="tab" aria-controls="nav-description" style="font-size: 14px;"
+                        aria-selected="true">Description</button>
+
+                    <button class="nav-link rounded-pill" id="nav-company-tab" data-bs-toggle="tab"
+                        data-bs-target="#nav-company" type="button" role="tab" aria-controls="nav-company" style="font-size: 14px;"
+                        aria-selected="false">Company</button>
+
+                    <button class="nav-link rounded-pill" id="nav-people-tab" data-bs-toggle="tab"
+                        data-bs-target="#nav-people" type="button" role="tab" aria-controls="nav-people" style="font-size: 14px;"
+                        aria-selected="false">People</button>
+
+                </tabs>
+        </job-hero>
+
+        <tabbed-pages class="d-block container">
+
+            <description-tab class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active p-3" id="nav-description" role="tabpanel"
+                    aria-labelledby="nav-description-tab">
+                    <h5>Job Description</h5>
+                    <p id="job_desc"></p>
+
+                    <br>
+
+                    <h5>Skills Required</h5>
+
+                    <ul id="job_skills">
+                    </ul>
+                </div>
+            </description-tab>
+
+            <company-tab class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade p-3" id="nav-company" role="tabpanel" aria-labelledby="nav-company-tab">
+                    <h5>Contact Us</h5>
+                    <contacts class="d-flex gap-2">
+                        <div class="flex-grow-1 rounded-3 p-2" style="border: 1px solid #e5e7eb">
+                            <p class="mb-1 text-secondary ">Email</p>
+                            <a class="mb-1 text-black fs-7 fw-semibold text-decoration-none"
+                                href="" id="job_email"></a>
+                        </div>
+                        <div class="flex-grow-1 rounded-3 p-2" style="border: 1px solid #e5e7eb">
+                            <p class="mb-1 text-secondary ">Website</p>
+                            <a class="mb-1 text-black fs-7 fs-7 fw-semibold text-decoration-none"
+                                href="" id="job_site"></a>
+                        </div>
+                    </contacts>
+                    <br>
+                    <h5>About Company</h5>
+                    <p id="job_about_company"></p>
+                </div>
+            </company-tab>
+
+            <people-tab class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade p-3" id="nav-people" role="tabpanel" aria-labelledby="nav-people-tab">
+                    <info-bar class="d-flex justify-content-between align-items-center">
+                        <div class="vstack">
+                            <small id="job_employee_count">0 Employees For</small>
+                            <small style="font-size: 12px;" class="text-secondary" id="job_employee_title">UI/UX Design</small>
+                        </div>
+                        <select name="job_field" id="job_field_select"
+                            class="form-select rounded-pill btn-outline-primary" style="max-width: 50%;">
+                        </select>
+                    </info-bar>
+
+                    <person-list id="job_employees_list">
+                        <template>
+                            <person-card class="d-flex align-items-center justify-content-center my-3 gap-2">
+                                <img src="./assets/images/person1.webp" alt="person img"
+                                    style="aspect-ratio: 1/1; height: 40px">
+                                <div class="vstack flex-grow-1">
+                                    <p class="mb-1">Dimas Adi Saputro</p>
+                                    <small class="text-secondary">Senior UI/UX Designer at Twitter</small>
+                                </div>
+                                <div class="vstack align-items-end py-1">
+                                    <small class="text-secondary" style="font-size: 11px;">Work during</small>
+                                    <small class="text-primary">5 Years</small>
+                                </div>
+                            </person-card>
+                            <hr>    
+                        </template>
+                        
+
+                        <!-- <person-card class="d-flex align-items-center justify-content-center my-3 gap-2">
+                            <img src="./assets/images/person2.webp" alt="person img"
+                                style="aspect-ratio: 1/1; height: 40px">
+                            <div class="vstack flex-grow-1">
+                                <p class="mb-1">Syahrul Ramadhani</p>
+                                <small class="text-secondary">Senior UI/UX Designer at Twitter</small>
+                            </div>
+                            <div class="vstack align-items-end py-1">
+                                <small class="text-secondary" style="font-size: 11px;">Work during</small>
+                                <small class="text-primary">5 Years</small>
+                            </div>
+                        </person-card>
+                        <hr>
+
+                        <person-card class="d-flex align-items-center justify-content-center my-3 gap-2">
+                            <img src="./assets/images/person3.webp" alt="person img"
+                                style="aspect-ratio: 1/1; height: 40px">
+                            <div class="vstack flex-grow-1">
+                                <p class="mb-1">Farrel Daniswara</p>
+                                <small class="text-secondary">Senior UI/UX Designer at Twitter</small>
+                            </div>
+                            <div class="vstack align-items-end py-1">
+                                <small class="text-secondary" style="font-size: 11px;">Work during</small>
+                                <small class="text-primary">4 Years</small>
+                            </div>
+                        </person-card>
+                        <hr>
+
+                        <person-card class="d-flex align-items-center justify-content-center my-3 gap-2">
+                            <img src="./assets/images/person4.webp" alt="person img"
+                                style="aspect-ratio: 1/1; height: 40px">
+                            <div class="vstack flex-grow-1">
+                                <p class="mb-1">Azzahra Farrelika</p>
+                                <small class="text-secondary">UI/UX Designer at Twitter</small>
+                            </div>
+                            <div class="vstack align-items-end py-1">
+                                <small class="text-secondary" style="font-size: 11px;">Work during</small>
+                                <small class="text-primary">3 Years</small>
+                            </div>
+                        </person-card> -->
+
+                    </person-list>
+                </div>
+            </people-tab>
+
+            <br><br><br>
+        </tabbed-pages>
+
+        <footer class="position-fixed bottom-0 start-0 end-0 px-4 pb-3"
+            style="background: linear-gradient(to top, white,rgba(255, 255, 255, 0.739), transparent)">
+            <button class="btn btn-primary w-100 rounded-pill mb-4" id="apply_link">Apply now</button>
+        </footer>
+
+    </main>
+</body>
+
+</html>

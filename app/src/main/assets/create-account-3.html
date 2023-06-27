@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/create-account-3.js" defer></script>
+    <style>
+        input[type=radio]+label {
+            background-color: transparent;
+
+        }
+
+        input[type=radio]:checked+label {
+            background-color: #091a7a;
+            color: white;
+        }
+
+        input[type=checkbox]+label {
+            background-color: var(--bs-light);
+            border-color: rgba(var(--bs-secondary-rgb), 0.2);
+            color: var(--bs-dark);
+            padding-block: 7px !important;
+        }
+
+        input[type=checkbox]:checked+label {
+            background-color: rgba(var(--bs-primary-rgb), 0.25);
+            border-color: var(--bs-primary);
+        }
+
+        button.nav-link.active {
+            background-color: #02337A !important;
+            color: white !important;
+        }
+        
+        save-unclicked-icon,
+        input[type=checkbox]:is(.save-suggested, .save-recent):checked+label>save-clicked-icon {
+            display: block;
+        }
+
+        save-clicked-icon,
+        input[type=checkbox]:is(.save-suggested, .save-recent):checked+label>save-unclicked-icon {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="javascript:location.replace('./create-account-4.html')" style="height: 100vh"
+        class="d-flex flex-column justify-content-between container">
+        <upper-part>
+            <br>
+            <h2>Where are you prefefred Location?</h2>
+            <small class="text-secondary">Let us know, where is the work location you want at this time, so we can
+                adjust it.</small>
+            <br>
+            <br>
+
+
+            <tabs role="tablist" class="nav nav-tabs nav-fill bg-light overflow-hidden rounded-pill p-1 container"
+                id="nav-tab">
+
+                <button class="nav-link active rounded-pill" id="nav-office-tab" data-bs-toggle="tab"
+                    data-bs-target="#nav-office" type="button" role="tab" aria-controls="nav-office"
+                    aria-selected="true">From Office</button>
+
+                <button class="nav-link rounded-pill" id="nav-remotely-tab" data-bs-toggle="tab"
+                    data-bs-target="#nav-remotely" type="button" role="tab" aria-controls="nav-remotely"
+                    aria-selected="false">Remotely</button>
+            </tabs>
+
+            <!-- <toggle-work-state>
+                <toggle-work-labels class="rounded-pill bg-light w-100 d-flex align-items-center p-1">
+                    <input class="d-none" name="work_state" id="work_from_office_radio" value="from_office"
+                        type="radio">
+                    <label role="button" class="btn rounded-pill flex-grow-1 " for="work_from_office_radio">From
+                        Office</label>
+
+                    <input class="d-none" name="work_state" id="remotely_radio" value="remotely" type="radio" checked>
+                    <label role="button" class="btn rounded-pill flex-grow-1" for="remotely_radio">Remotely</label>
+                </toggle-work-labels>
+
+            </toggle-work-state> -->
+
+
+            <tabbed-pages class="d-block container">
+                <office-tab class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active p-3" id="nav-office" role="tabpanel"
+                        aria-labelledby="nav-office-tab">
+
+                        <br>
+                        <p>Select countries that you want to work in from office</p>
+
+                        <card-flex class="d-flex flex-wrap">
+                            <template data-named="offline_place">
+                                <input type="checkbox" id="choice_id" class="d-none" name="countries_prefs">
+                                <label for="choice_id"
+                                    class="rounded-pill p-2 px-3 btn btn-outline-secondary d-flex align-items-center"
+                                    id="choice_id_label">
+                                    <img src="./assets/images/flag-cr-usa.webp" id="choice_img" alt="img"
+                                        class="d-inline-block rounded-circle">
+                                    <span>United States</span>
+                                </label>
+                            </template>
+                        </card-flex>
+                    </div>
+                </office-tab>
+                <remotely-tab class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade p-3" id="nav-remotely" role="tabpanel"
+                        aria-labelledby="nav-remotely-tab">
+
+                        <br>
+                        <p>Select countries that you want to work in remotely</p>
+
+                        <card-flex class="d-flex flex-wrap">
+                            <template data-named="remote_place">
+                                <input type="checkbox" id="choice_id" class="d-none" name="countries_prefs">
+                                <label for="choice_id"
+                                    class="rounded-pill p-2 px-3 btn btn-outline-secondary d-flex align-items-center"
+                                    id="choice_id_label">
+                                    <img src="./assets/images/flag-cr-usa.webp" id="choice_img" alt="img"
+                                        class="d-inline-block rounded-circle">
+                                    <span>United States</span>
+                                </label>
+                            </template>
+
+                        </card-flex>
+                    </div>
+                </remotely-tab>
+
+            </tabbed-pages>
+        </upper-part>
+
+
+        <lower-part class="text-center">
+            <button class="btn btn-primary rounded-pill w-100" id="form_submit_btn" type="submit">Next</button>
+            <br><br>
+        </lower-part>
+
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/create-account-1.js" defer></script>
+</head>
+<body>
+    <form action="http://167.71.79.133/api/auth/register" enctype="multipart/form-data" method="get" style="height: 100vh" class="d-flex flex-column justify-content-between container">
+        <upper-part>
+            <br>
+            <div class="d-flex justify-content-between">
+
+                <a href="javascript:history.go(-1);" class="btn bg-transparent rounded-pill" type="button">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.56994 18.82C9.37994 18.82 9.18994 18.75 9.03994 18.6L2.96994 12.53C2.67994 12.24 2.67994 11.76 2.96994 11.47L9.03994 5.4C9.32994 5.11 9.80994 5.11 10.0999 5.4C10.3899 5.69 10.3899 6.17 10.0999 6.46L4.55994 12L10.0999 17.54C10.3899 17.83 10.3899 18.31 10.0999 18.6C9.95994 18.75 9.75994 18.82 9.56994 18.82Z" fill="#292D32"/>
+                        <path d="M20.4999 12.75H3.66992C3.25992 12.75 2.91992 12.41 2.91992 12C2.91992 11.59 3.25992 11.25 3.66992 11.25H20.4999C20.9099 11.25 21.2499 11.59 21.2499 12C21.2499 12.41 20.9099 12.75 20.4999 12.75Z" fill="#292D32"/>
+                        </svg>
+                </a>
+
+                
+                <svg width="81" height="19" viewBox="0 0 81 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.242188 11.6797C0.242188 13.8359 1.75 15.2344 4.05469 15.2344C6.46875 15.2344 7.90625 13.8672 7.90625 11.4688V3.72656H5.54688V11.4531C5.54688 12.5859 5.01562 13.1953 4.03125 13.1953C3.14062 13.1953 2.54688 12.5938 2.53125 11.6797H0.242188ZM30.7547 15C33.1609 15 34.6531 13.7578 34.6531 11.7734C34.6531 10.2812 33.5281 9.16406 31.9969 9.04688V8.98438C33.1922 8.80469 34.1141 7.77344 34.1141 6.53906C34.1141 4.8125 32.7859 3.72656 30.6688 3.72656H25.7625V15H30.7547ZM28.1219 5.48438H30.0594C31.1609 5.48438 31.7938 6 31.7938 6.90625C31.7938 7.85938 31.075 8.41406 29.8172 8.41406H28.1219V5.48438ZM28.1219 13.2422V9.96875H30.0984C31.4891 9.96875 32.2469 10.5312 32.2469 11.5859C32.2469 12.6641 31.5125 13.2422 30.1531 13.2422H28.1219ZM36.215 11.7891C36.2853 13.9062 38.0119 15.1953 40.7228 15.1953C43.5197 15.1953 45.2931 13.8125 45.2931 11.625C45.2931 9.90625 44.3088 8.9375 42.0509 8.45312L40.6838 8.16406C39.3869 7.86719 38.84 7.47656 38.84 6.78125C38.84 5.94531 39.6213 5.39062 40.7853 5.39062C41.965 5.39062 42.8009 5.96875 42.8791 6.92188H45.09C45.0509 4.88281 43.4025 3.53125 40.7775 3.53125C38.2619 3.53125 36.465 4.90625 36.465 6.98438C36.465 8.63281 37.4884 9.6875 39.5666 10.1328L41.0353 10.4531C42.3947 10.7578 42.9338 11.1641 42.9338 11.8984C42.9338 12.7266 42.0744 13.3281 40.8166 13.3281C39.5666 13.3281 38.5978 12.7188 38.4884 11.7891H36.215ZM52.4722 15.1953C53.1831 15.1953 53.8394 15.0938 54.4409 14.8828L55.2456 16.0625H57.5347L56.105 13.9062C57.2691 12.9453 57.9019 11.3516 57.9019 9.36719C57.9019 5.78125 55.8081 3.53125 52.4722 3.53125C49.1284 3.53125 47.0347 5.78125 47.0347 9.36719C47.0347 12.9844 49.1284 15.1953 52.4722 15.1953ZM52.4722 13.2422C50.6206 13.2422 49.4409 11.7266 49.4409 9.36719C49.4409 7 50.6206 5.47656 52.4722 5.47656C54.3159 5.47656 55.4956 7 55.4956 9.36719C55.4956 10.4531 55.1987 11.3516 54.6675 11.9609L54.1753 11.2891H52.0425L53.2769 13.1328C53.0269 13.2031 52.7612 13.2422 52.4722 13.2422ZM62.4325 3.72656H60.0731V11.0156C60.0731 13.5 61.9091 15.1953 64.7997 15.1953C67.6825 15.1953 69.5184 13.5 69.5184 11.0156V3.72656H67.1591V10.7812C67.1591 12.2266 66.3075 13.1719 64.7997 13.1719C63.2841 13.1719 62.4325 12.2266 62.4325 10.7812V3.72656ZM79.51 13.0469H74.4006V10.2031H79.2209V8.39062H74.4006V5.67188H79.51V3.72656H72.0413V15H79.51V13.0469Z" fill="#111827"/>
+                    <path d="M21.6667 8.41669C21.6667 11.3159 19.3158 13.6667 16.4167 13.6667C13.5175 13.6667 11.1667 11.3159 11.1667 8.41669C11.1667 5.51752 13.5175 3.16669 16.4167 3.16669" stroke="#3366FF" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M21.0424 14.0691C21.3516 15.0024 22.0574 15.0957 22.5999 14.2791C23.0958 13.5324 22.7691 12.9199 21.8708 12.9199C21.2058 12.9141 20.8324 13.4332 21.0424 14.0691Z" stroke="#3366FF" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M18.1667 4.91669H21.6667" stroke="#3366FF" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M18.1667 6.66669H19.9167" stroke="#3366FF" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    
+            </div>
+            <br>
+            <h2>Create Account</h2>
+            <small class="text-secondary">Please create an account to find your dream job</small>
+            <br>
+            <br>
+            <br>
+            
+            <label for="inp_username" class="d-flex align-items-center border-secondary border-opacity-25 rounded-3 px-2 my-2" style="border: 1px solid black;">
+                <person-icon>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.1333 9.05835C10.05 9.05002 9.95 9.05002 9.85834 9.05835C7.875 8.99169 6.3 7.36669 6.3 5.36669C6.3 3.32502 7.95 1.66669 10 1.66669C12.0417 1.66669 13.7 3.32502 13.7 5.36669C13.6917 7.36669 12.1167 8.99169 10.1333 9.05835Z" stroke="#9CA3AF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M5.96666 12.1333C3.95 13.4833 3.95 15.6833 5.96666 17.025C8.25833 18.5583 12.0167 18.5583 14.3083 17.025C16.325 15.675 16.325 13.475 14.3083 12.1333C12.025 10.6083 8.26666 10.6083 5.96666 12.1333Z" stroke="#9CA3AF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                </person-icon>
+                <input id="inp_username" name="name" placeholder="Username" type="text" class="form-control my-1 border-0" required>
+            </label>
+
+            <label for="inp_email" class="d-flex align-items-center border-secondary border-opacity-25 rounded-3 px-2 my-2" style="border: 1px solid black;">
+                <mail-icon>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.1667 17.2084H5.83333C4.40741 17.2084 3.35071 16.7999 2.65043 16.0996C1.95015 15.3993 1.54166 14.3426 1.54166 12.9167V7.08335C1.54166 5.65743 1.95015 4.60073 2.65043 3.90045C3.35071 3.20017 4.40741 2.79169 5.83333 2.79169H14.1667C15.5926 2.79169 16.6493 3.20017 17.3496 3.90045C18.0499 4.60073 18.4583 5.65743 18.4583 7.08335V12.9167C18.4583 14.3426 18.0499 15.3993 17.3496 16.0996C16.6493 16.7999 15.5926 17.2084 14.1667 17.2084ZM5.83333 3.04169C4.56818 3.04169 3.53131 3.3491 2.81519 4.06522C2.09908 4.78133 1.79166 5.8182 1.79166 7.08335V12.9167C1.79166 14.1818 2.09908 15.2187 2.81519 15.9348C3.53131 16.6509 4.56818 16.9584 5.83333 16.9584H14.1667C15.4318 16.9584 16.4687 16.6509 17.1848 15.9348C17.9009 15.2187 18.2083 14.1818 18.2083 12.9167V7.08335C18.2083 5.8182 17.9009 4.78133 17.1848 4.06522C16.4687 3.3491 15.4318 3.04169 14.1667 3.04169H5.83333Z" fill="#292D32" stroke="#9CA3AF"/>
+                        <path d="M8.36579 9.67913L8.36581 9.67911L8.36186 9.67596L5.75572 7.59438C5.69356 7.54298 5.69593 7.46498 5.72954 7.4236C5.78093 7.36036 5.85958 7.36256 5.90119 7.39637L5.90118 7.39638L5.90445 7.39899L8.51184 9.48158C8.512 9.48171 8.51216 9.48184 8.51232 9.48196C8.93359 9.81987 9.47718 9.97289 9.99565 9.97289C10.5141 9.97289 11.0577 9.81987 11.479 9.48196C11.4791 9.48184 11.4793 9.48171 11.4795 9.48158L14.0869 7.39899L14.0869 7.399L14.0901 7.39637C14.1443 7.35231 14.2191 7.36783 14.2513 7.41024L14.2564 7.41701L14.2618 7.4236C14.3058 7.47783 14.2903 7.55264 14.2479 7.58476L14.2478 7.58463L14.2378 7.59263L11.6294 9.67596L11.6294 9.6759L11.6226 9.68155C11.1931 10.0372 10.6032 10.225 9.99982 10.225C9.39736 10.225 8.80549 10.0377 8.36579 9.67913Z" fill="#292D32" stroke="#9CA3AF"/>
+                        </svg>
+                </mail-icon>
+                <input id="inp_email" name="email" placeholder="Email" type="email" class="form-control my-1 border-0" required>
+            </label>
+
+            <label for="inp_password" class="d-flex align-items-center border-secondary border-opacity-25 rounded-3 px-2 my-2" style="border: 1px solid black;">
+                <lock-icon clas>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 8.33329V6.66663C5 3.90829 5.83333 1.66663 10 1.66663C14.1667 1.66663 15 3.90829 15 6.66663V8.33329" stroke="#9CA3AF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M10 15.4167C11.1506 15.4167 12.0833 14.4839 12.0833 13.3333C12.0833 12.1827 11.1506 11.25 10 11.25C8.8494 11.25 7.91666 12.1827 7.91666 13.3333C7.91666 14.4839 8.8494 15.4167 10 15.4167Z" stroke="#9CA3AF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M14.1667 18.3334H5.83333C2.5 18.3334 1.66666 17.5 1.66666 14.1667V12.5C1.66666 9.16671 2.5 8.33337 5.83333 8.33337H14.1667C17.5 8.33337 18.3333 9.16671 18.3333 12.5V14.1667C18.3333 17.5 17.5 18.3334 14.1667 18.3334Z" stroke="#9CA3AF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        
+
+                </lock-icon>
+                <input id="inp_password" name="password" placeholder="Password" type="password" class="form-control my-1 border-0" required>
+            </label>
+            
+            <small class="text-secondary" id="password_validation">Password must be at least 8 characters</small>
+        </upper-part>
+
+        
+        <lower-part class="text-center">
+            <p class="text-center text-secondary">Already have an account? <a class="text-primary text-decoration-none" href="javascript:history.go(-1)">Login</a></p>
+            <button disabled class="btn btn-secondary rounded-pill w-100" id="form_submit_btn" type="submit">Create account
+                <div class="spinner-border spinner-border-sm text-light" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </button>
+            <div class="d-flex gap-4">
+                <hr class="flex-grow-1">
+                <span class="d-inline-block mx-4 my-2 text-secondary">Or Sign up With Account</span>
+                <hr class="flex-grow-1">
+            </div>
+            <div class="d-flex gap-2">
+                <button type="button" class="btn btn-outline-light text-secondary border-secondary border-opacity-25 flex-grow-1">
+                    <google-icon>
+                        <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_6787_5663)">
+                                <path
+                                    d="M4.01067 6.51C4.32259 5.5663 4.92457 4.74521 5.73074 4.16387C6.53691 3.58252 7.50609 3.27062 8.5 3.27267C9.62667 3.27267 10.6453 3.67267 11.4453 4.32733L13.7733 2C12.3547 0.763333 10.5367 0 8.5 0C5.34667 0 2.632 1.79867 1.32667 4.43333L4.01067 6.51Z"
+                                    fill="#EA4335" />
+                                <path
+                                    d="M11.1933 12.0086C10.4667 12.4773 9.544 12.7273 8.5 12.7273C7.51005 12.7293 6.54454 12.4199 5.74016 11.8429C4.93578 11.2658 4.3333 10.4504 4.018 9.51196L1.32467 11.5566C1.9855 12.8942 3.00818 14.0196 4.27655 14.805C5.54492 15.5904 7.00814 16.0044 8.5 16C10.4553 16 12.3233 15.3046 13.7227 14L11.194 12.0086H11.1933Z"
+                                    fill="#34A853" />
+                                <path
+                                    d="M13.7227 14.0001C15.186 12.6347 16.136 10.6027 16.136 8.00008C16.136 7.52674 16.0633 7.01808 15.9547 6.54541H8.5V9.63674H12.7907C12.5793 10.6761 12.0107 11.4807 11.194 12.0087L13.7227 14.0001Z"
+                                    fill="#4A90E2" />
+                                <path
+                                    d="M4.018 9.51202C3.8549 9.02462 3.77205 8.51397 3.77267 8.00002C3.77267 7.47868 3.856 6.97802 4.01067 6.51002L1.32667 4.43335C0.777587 5.54181 0.494537 6.76303 0.500001 8.00002C0.500001 9.28002 0.796668 10.4867 1.32467 11.5567L4.018 9.51202Z"
+                                    fill="#FBBC05" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_6787_5663">
+                                    <rect width="16" height="16" fill="white" transform="translate(0.5)" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </google-icon>
+
+                    Google</button>
+                <button type="button" class="btn btn-outline-light text-secondary border-secondary border-opacity-25 flex-grow-1">
+                    <facebook-icon>
+                        <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="10.5" cy="10" r="8.75" fill="url(#paint0_linear_6787_5669)" />
+                            <path
+                                d="M13.7586 12.676L14.1472 10.2063H11.7158V8.60437C11.7158 7.92856 12.0548 7.26942 13.1438 7.26942H14.25V5.16687C14.25 5.16687 13.2466 5 12.2877 5C10.2843 5 8.97604 6.18309 8.97604 8.32403V10.2063H6.75V12.676H8.97604V18.6466C9.42294 18.715 9.88015 18.75 10.3459 18.75C10.8117 18.75 11.2689 18.715 11.7158 18.6466V12.676H13.7586Z"
+                                fill="white" />
+                            <defs>
+                                <linearGradient id="paint0_linear_6787_5669" x1="10.5" y1="1.25" x2="10.5" y2="18.6981"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#18ACFE" />
+                                    <stop offset="1" stop-color="#0163E0" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </facebook-icon>
+
+                    Facebook</button>
+            </div>
+            <br><br>
+        </lower-part>
+    </form>
+    
+    <div id="error-toast" class="toast align-items-center text-bg-danger border-0 position-fixed top-0 start-0 end-0 m-3 mx-auto" style="opacity: 0.9" role="alert" aria-live="assertive"
+        aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body">
+                Something went wrong
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                aria-label="Close"></button>
+        </div>
+    </div>
+
+</body>
+</html>

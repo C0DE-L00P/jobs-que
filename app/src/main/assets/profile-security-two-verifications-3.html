@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two factor auth</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/CountryCodes.js" defer></script>
+</head>
+
+<body style="height: 100vh">
+    <br>
+    <header class="position-relative d-flex justify-content-between align-items-center pt-3 pb-3 top-0 w-100 container">
+        <a href="./profile-1.html" class="btn bg-transparent rounded-pill">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M9.56994 18.82C9.37994 18.82 9.18994 18.75 9.03994 18.6L2.96994 12.53C2.67994 12.24 2.67994 11.76 2.96994 11.47L9.03994 5.4C9.32994 5.11 9.80994 5.11 10.0999 5.4C10.3899 5.69 10.3899 6.17 10.0999 6.46L4.55994 12L10.0999 17.54C10.3899 17.83 10.3899 18.31 10.0999 18.6C9.95994 18.75 9.75994 18.82 9.56994 18.82Z"
+                    fill="#292D32" />
+                <path
+                    d="M20.4999 12.75H3.66992C3.25992 12.75 2.91992 12.41 2.91992 12C2.91992 11.59 3.25992 11.25 3.66992 11.25H20.4999C20.9099 11.25 21.2499 11.59 21.2499 12C21.2499 12.41 20.9099 12.75 20.4999 12.75Z"
+                    fill="#292D32" />
+            </svg>
+        </a>
+
+        <h5 class="fw-semibold me-4">Two-step verification</h5>
+        <i class="opacity-0">---</i>
+    </header>
+    <br>
+
+    <div class="container ">
+        <field class="mb-3 d-block">
+            <small class="mb-1 d-block fw-semibold">Add phone number</small>
+            <small class="mb-2 d-block text-secondary">We will send a verification code to this number</small>
+            <div class="input-group">
+                <div class="dropdown">
+                    <button
+                        class="btn btn-outline-light rounded-0 rounded-start text-secondary border border-1 border-secondary border-opacity-50 dropdown-toggle"
+                        type="button" data-bs-toggle="dropdown" aria-expanded="false" style="z-index: 0;">
+                        <img src="./assets/images/flags/eg.svg" style="width: 28px;" class="rounded-1"
+                            id="picked_country">
+                    </button>
+                    <ul class="dropdown-menu overflow-scroll mb-0 pb-0 bg-light border border-secondary border-opacity-10"
+                        id="code_select_menu"
+                        style="max-height: min(300px, 100vh); background-clip: unset; padding: 0!important; z-index: 8;">
+
+                        <template id="flag_temp">
+                            <li class="px-2 py-2 btn-outline-light border-0" style="min-width: max-content!important">
+                                <input type="radio" name="country_code" value="+20" checked class="dropdown-item d-none"
+                                    id="country_code_1">
+                                <label for="country_code_1" class="d-flex align-items-center gap-2">
+                                    <img src="./assets/images/ar-flag.webp" alt="" style="width: 32px;">
+                                    Egypt (+20)
+                                </label>
+                            </li>
+                        </template>
+                    </ul>
+                </div>
+                <input type="number" name="fullname" class="form-control" value="1006667234" required>
+            </div>
+        </field>
+
+        <field class="mb-3 d-block">
+            <small class="mb-1 d-block fw-semibold">Enter your new password</small>
+            <label for="inp_new_pass" class="position-relative rounded-2 d-flex align-items-center px-3"
+                style="border: 1px solid #d1d5db;">
+                <lock-icon>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M15 8.45829C14.9699 8.45829 14.9386 8.44601 14.9129 8.42036C14.8873 8.39472 14.875 8.36344 14.875 8.33329V6.66663C14.875 5.3316 14.6924 4.08243 13.9337 3.1742C13.1579 2.24546 11.8854 1.79163 10 1.79163C8.11455 1.79163 6.84211 2.24546 6.06627 3.1742C5.30756 4.08243 5.125 5.3316 5.125 6.66663V8.33329C5.125 8.36344 5.11272 8.39472 5.08707 8.42036C5.06143 8.44601 5.03015 8.45829 5 8.45829C4.96985 8.45829 4.93857 8.44601 4.91293 8.42036C4.88728 8.39472 4.875 8.36344 4.875 8.33329V6.66663C4.875 5.47951 5.02312 4.20693 5.70595 3.23538C6.36327 2.30014 7.59282 1.54163 10 1.54163C12.4072 1.54163 13.6367 2.30014 14.2941 3.23538C14.9769 4.20693 15.125 5.47951 15.125 6.66663V8.33329C15.125 8.36344 15.1127 8.39472 15.0871 8.42036C15.0614 8.44601 15.0301 8.45829 15 8.45829Z"
+                            fill="#292D32" stroke="#9CA3AF" />
+                        <path
+                            d="M9.99984 15.5417C8.78431 15.5417 7.7915 14.5489 7.7915 13.3333C7.7915 12.1178 8.78431 11.125 9.99984 11.125C11.2154 11.125 12.2082 12.1178 12.2082 13.3333C12.2082 14.5489 11.2154 15.5417 9.99984 15.5417ZM9.99984 11.375C8.92369 11.375 8.0415 12.2572 8.0415 13.3333C8.0415 14.4095 8.92369 15.2917 9.99984 15.2917C11.076 15.2917 11.9582 14.4095 11.9582 13.3333C11.9582 12.2572 11.076 11.375 9.99984 11.375Z"
+                            fill="#292D32" stroke="#9CA3AF" />
+                        <path
+                            d="M14.1665 18.4584H5.83317C4.01289 18.4584 2.99921 18.1736 2.41277 17.5871C1.82632 17.0007 1.5415 15.987 1.5415 14.1667V12.5C1.5415 10.6798 1.82632 9.66608 2.41277 9.07964C2.99921 8.49319 4.01289 8.20837 5.83317 8.20837H14.1665C15.9868 8.20837 17.0005 8.49319 17.5869 9.07964C18.1734 9.66608 18.4582 10.6798 18.4582 12.5V14.1667C18.4582 15.987 18.1734 17.0007 17.5869 17.5871C17.0005 18.1736 15.9868 18.4584 14.1665 18.4584ZM5.83317 8.45837C5.07851 8.45837 4.44211 8.49353 3.91792 8.60418C3.38816 8.71601 2.93711 8.91225 2.58968 9.26039C2.2423 9.60847 2.04708 10.0598 1.93602 10.5889C1.82612 11.1125 1.7915 11.7477 1.7915 12.5V14.1667C1.7915 14.9191 1.82612 15.5543 1.93602 16.0779C2.04708 16.607 2.2423 17.0583 2.58968 17.4064C2.93711 17.7545 3.38816 17.9507 3.91792 18.0626C4.44211 18.1732 5.07851 18.2084 5.83317 18.2084H14.1665C14.9212 18.2084 15.5576 18.1732 16.0818 18.0626C16.6115 17.9507 17.0626 17.7545 17.41 17.4064C17.7574 17.0583 17.9526 16.607 18.0637 16.0779C18.1736 15.5543 18.2082 14.9191 18.2082 14.1667V12.5C18.2082 11.7477 18.1736 11.1125 18.0637 10.5889C17.9526 10.0598 17.7574 9.60847 17.41 9.26039C17.0626 8.91225 16.6115 8.71601 16.0818 8.60418C15.5576 8.49353 14.9212 8.45837 14.1665 8.45837H5.83317Z"
+                            fill="#292D32" stroke="#9CA3AF" />
+                    </svg>
+
+                </lock-icon>
+                <input name="new_password" placeholder="Enter your email...." type="password"
+                    class="form-control my-2 border-0" id="inp_new_pass">
+            </label>
+        </field>
+
+    </div>
+
+    <br>
+
+    <footer class="position-fixed bottom-0 start-0 end-0 px-4 pb-3"
+        style="background: linear-gradient(to top, white,rgba(255, 255, 255, 0.739), transparent)">
+        <button class="btn btn-primary w-100 rounded-pill mb-4">Send Code</button>
+    </footer>
+
+</body>
+
+</html>

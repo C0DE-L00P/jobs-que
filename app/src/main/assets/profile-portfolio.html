@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/profile-portfolio.js" defer></script>
+
+    <style>
+        .notification-item:hover {
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+
+<body style="height: 100vh" class="container">
+    <header class="position-relative">
+        <div class="d-flex justify-content-between align-items-center pt-3 pb-3 top-0 w-100">
+            <a href="javascript:history.go(-1)" class="btn bg-transparent rounded-pill">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M9.56994 18.82C9.37994 18.82 9.18994 18.75 9.03994 18.6L2.96994 12.53C2.67994 12.24 2.67994 11.76 2.96994 11.47L9.03994 5.4C9.32994 5.11 9.80994 5.11 10.0999 5.4C10.3899 5.69 10.3899 6.17 10.0999 6.46L4.55994 12L10.0999 17.54C10.3899 17.83 10.3899 18.31 10.0999 18.6C9.95994 18.75 9.75994 18.82 9.56994 18.82Z"
+                        fill="#292D32" />
+                    <path
+                        d="M20.4999 12.75H3.66992C3.25992 12.75 2.91992 12.41 2.91992 12C2.91992 11.59 3.25992 11.25 3.66992 11.25H20.4999C20.9099 11.25 21.2499 11.59 21.2499 12C21.2499 12.41 20.9099 12.75 20.4999 12.75Z"
+                        fill="#292D32" />
+                </svg>
+            </a>
+
+            <h5 class="fw-semibold me-4">Portfolio</h5>
+            <i class="opacity-0">---</i>
+
+        </div>
+    </header>
+
+    <div class="container">
+        <h6>Add portfolio here</h6>
+
+        <input id="portfolio_picker" type="file" name="cv_file" accept="application/msword, application/pdf"
+            class="form-control d-none" required>
+
+        <label for="portfolio_picker" role="button" style="border: 1px dashed var(--bs-primary);"
+            class="p-3 rounded-3 bg-primary bg-opacity-10 text-center w-100">
+            <upload-icon class="d-block ">
+                <svg width="57" height="56" viewBox="0 0 57 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="0.5" width="56" height="56" rx="28" fill="#D6E4FF" />
+                    <path
+                        d="M39.8335 25.5866H35.9802C32.8202 25.5866 30.2468 23.0133 30.2468 19.8533V16C30.2468 15.2666 29.6468 14.6666 28.9135 14.6666H23.2602C19.1535 14.6666 15.8335 17.3333 15.8335 22.0933V33.9066C15.8335 38.6666 19.1535 41.3333 23.2602 41.3333H33.7402C37.8468 41.3333 41.1668 38.6666 41.1668 33.9066V26.92C41.1668 26.1866 40.5668 25.5866 39.8335 25.5866ZM27.8735 30.04C27.6735 30.24 27.4202 30.3333 27.1668 30.3333C26.9135 30.3333 26.6602 30.24 26.4602 30.04L25.5002 29.08V34.6666C25.5002 35.2133 25.0468 35.6666 24.5002 35.6666C23.9535 35.6666 23.5002 35.2133 23.5002 34.6666V29.08L22.5402 30.04C22.1535 30.4266 21.5135 30.4266 21.1268 30.04C20.7402 29.6533 20.7402 29.0133 21.1268 28.6266L23.7935 25.96C23.8868 25.88 23.9802 25.8133 24.0868 25.76C24.1135 25.7466 24.1535 25.7333 24.1802 25.72C24.2602 25.6933 24.3402 25.68 24.4335 25.6666C24.4735 25.6666 24.5002 25.6666 24.5402 25.6666C24.6468 25.6666 24.7535 25.6933 24.8602 25.7333C24.8735 25.7333 24.8735 25.7333 24.8868 25.7333C24.9935 25.7733 25.1002 25.8533 25.1802 25.9333C25.1935 25.9466 25.2068 25.9466 25.2068 25.96L27.8735 28.6266C28.2602 29.0133 28.2602 29.6533 27.8735 30.04Z"
+                        fill="#3366FF" />
+                    <path
+                        d="M35.7399 23.7467C37.0066 23.76 38.7666 23.76 40.2732 23.76C41.0332 23.76 41.4332 22.8667 40.8999 22.3334C38.9799 20.4 35.5399 16.92 33.5666 14.9467C33.0199 14.4 32.0732 14.7734 32.0732 15.5334V20.1867C32.0732 22.1334 33.7266 23.7467 35.7399 23.7467Z"
+                        fill="#3366FF" />
+                </svg>
+            </upload-icon>
+
+            <br>
+            <h6 class="mb-1">Upload your other file</h6>
+            <small class="text-secondary d-block mb-3" style="font-size: 12px;">Max. file size 10 MB</small>
+
+            <label for="portfolio_picker"
+                class=" rounded-pill w-100 bg-primary bg-opacity-10 text-primary btn btn-outline-primary" type="button">
+                <upload-mini-icon class="mx-1">
+                    <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M13.2169 18.5416H7.78356C3.69189 18.5416 1.94189 16.7916 1.94189 12.6999V12.5916C1.94189 8.89161 3.40023 7.10827 6.66689 6.79994C7.00023 6.77494 7.31689 7.02494 7.35023 7.36661C7.38356 7.70827 7.13356 8.01661 6.78356 8.04994C4.16689 8.29161 3.19189 9.52494 3.19189 12.5999V12.7083C3.19189 16.0999 4.39189 17.2999 7.78356 17.2999H13.2169C16.6086 17.2999 17.8086 16.0999 17.8086 12.7083V12.5999C17.8086 9.50827 16.8169 8.27494 14.1502 8.04994C13.8086 8.01661 13.5502 7.71661 13.5836 7.37494C13.6169 7.03327 13.9086 6.77494 14.2586 6.80827C17.5752 7.09161 19.0586 8.88327 19.0586 12.6083V12.7166C19.0586 16.7916 17.3086 18.5416 13.2169 18.5416Z"
+                            fill="#3366FF" />
+                        <path
+                            d="M10.5 13.1251C10.1583 13.1251 9.875 12.8417 9.875 12.5001V3.01672C9.875 2.67506 10.1583 2.39172 10.5 2.39172C10.8417 2.39172 11.125 2.67506 11.125 3.01672V12.5001C11.125 12.8417 10.8417 13.1251 10.5 13.1251Z"
+                            fill="#3366FF" />
+                        <path
+                            d="M13.2917 5.50003C13.1334 5.50003 12.975 5.4417 12.85 5.3167L10.5 2.9667L8.15003 5.3167C7.90837 5.55837 7.50837 5.55837 7.2667 5.3167C7.02503 5.07503 7.02503 4.67503 7.2667 4.43337L10.0584 1.6417C10.3 1.40003 10.7 1.40003 10.9417 1.6417L13.7334 4.43337C13.975 4.67503 13.975 5.07503 13.7334 5.3167C13.6167 5.4417 13.45 5.50003 13.2917 5.50003Z"
+                            fill="#3366FF" />
+                    </svg>
+                </upload-mini-icon>
+                <span class="fw-semibold">Add file</span>
+            </label>
+        </label>
+
+        <br><br>
+
+    </div>
+
+    <portfolios-list class="container d-block">
+        <template>
+
+        </template>
+    </portfolios-list>
+
+    <br>
+    <br>
+
+    <div id="toast" class="toast align-items-center text-bg-danger border-0 position-fixed top-0 start-0 end-0 m-3"
+        style="opacity: 0.9" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body">
+                Something went wrong
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                aria-label="Close"></button>
+        </div>
+    </div>
+
+</body>
+
+</html>
